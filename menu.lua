@@ -272,7 +272,7 @@ if not isfile("eclipse.wtf") then
          rotateGradient()
          local time = os.date("%X", os.time())
          local ping = string.format('%.0f', game.Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
-         local gameName = "Fallen"
+         local gameName = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
          local fpsValue = string.split(game.Stats.Workspace.Heartbeat:GetValueString(), ".")[1]
          WaterMarkLabel.Text = 'eclipse.<font color="rgb(189, 172, 255)">wtf</font> - game: <font color="rgb(189, 172, 255)">' .. gameName .. '</font> / fps: <font color="rgb(189, 172, 255)">' .. fpsValue .. '</font> / ping: <font color="rgb(189, 172, 255)">' .. ping .. '</font> / time: <font color="rgb(189, 172, 255)">' .. time .. '</font>'
        end
@@ -346,7 +346,7 @@ if not isfile("eclipse.wtf") then
     pre.Position = UDim2.new(0, 4, 0, -43)
     pre.Size = UDim2.new(0, 802, 0, 24)
     pre.FontFace = Fonts.ProggyTiny
-    pre.Text = "eclipse.<font color=\"rgb(189, 172, 255)\">wtf</font> | fallen survival"
+    pre.Text = library.Title
     pre.TextColor3 = Color3.fromRGB(74, 74, 74)
     pre.TextSize = 9
     pre.TextStrokeTransparency = 0.000
