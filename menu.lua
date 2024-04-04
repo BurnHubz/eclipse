@@ -114,7 +114,6 @@ if not isfile("eclipse.wtf") then
  Tab.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
  Tab.BackgroundTransparency = 0
  Tab.BorderSizePixel = 1
- Tab.Visible = false
  Tab.BorderMode = "Inset"
  Tab.BorderColor3 = Color3.fromRGB(25, 25, 25)
  Tab.Position = UDim2.new(-0.007, 0, 1.833, 0)
