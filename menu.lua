@@ -281,7 +281,7 @@ if not isfile("eclipse.wtf") then
  end
  
  local library = {
-    Title = 'eclipse.<font color="rgb(189, 172, 255)">wtf</font> | fallen survival',
+    Title = 'eclipse.<font color="rgb(189, 172, 255)">wtf</font> || universal',
     keybind = Enum.KeyCode.RightBracket,
     Watermark = createWatermark(),
        Colors = {
