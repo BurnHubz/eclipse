@@ -1792,7 +1792,7 @@ if not isfile("eclipse.wtf") then
 
                             local list2 = Instance.new("Frame")
                             local frame = Instance.new("Frame")
-                            local main = Instance.new("Frame")
+                            local main = Instance.new("ScrollingFrame")
                             local holder = Instance.new("ScrollingFrame")
                             local UIListLayout = Instance.new("UIListLayout")
                             local dwn = Instance.new("ImageLabel")
@@ -1819,6 +1819,7 @@ if not isfile("eclipse.wtf") then
                             main.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
                             main.BorderColor3 = Color3.fromRGB(14, 14, 14)
                             main.Size = UDim2.new(1, 0, 1, 0)
+                            main.ScrollBarThickness = 0
 
                             holder.Name = "holder"
                             holder.Parent = main
