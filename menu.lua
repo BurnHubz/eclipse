@@ -712,6 +712,7 @@ if not isfile("eclipse.wtf") then
                                 state = newState
                                 library.flags[args.flag] = state
                                 front.BackgroundColor3 = state and library.Colors.libColor or Color3.fromRGB(25, 25, 25)
+                                library:Tween(front, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = state and library.libColor or Color3.fromRGB(21, 21, 21)})
                                 if args.risky then text.TextColor3 = state and Color3.fromRGB(255, 0, 0) or Color3.fromRGB(139, 0, 0) else text.TextColor3 = state and Color3.fromRGB(244, 244, 244) or Color3.fromRGB(144, 144, 144) end
                                 if args.callback then args.callback(state) end
                             end
@@ -722,8 +723,8 @@ if not isfile("eclipse.wtf") then
                             library.flags[args.flag] = state
                             mid.BorderColor3 = Color3.fromRGB(20,20,20)
                             front.BackgroundColor3 = state and library.Colors.libColor or Color3.fromRGB(25, 25, 25)
-                            if args.risky then text.TextColor3 = state and Color3.fromRGB(255, 0, 0) or Color3.fromRGB(139, 0, 0) else text.TextColor3 = state and Color3.fromRGB(244, 244, 244) or Color3.fromRGB(144, 144, 144) end
                             library:Tween(front, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = state and library.libColor or Color3.fromRGB(21, 21, 21)})
+                            if args.risky then text.TextColor3 = state and Color3.fromRGB(255, 0, 0) or Color3.fromRGB(139, 0, 0) else text.TextColor3 = state and Color3.fromRGB(244, 244, 244) or Color3.fromRGB(144, 144, 144) end
                             if args.callback then args.callback(state) end
                             end)
 
