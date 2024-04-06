@@ -100,6 +100,7 @@ if not isfile("eclipse.wtf") then
  Name.TextColor3 = Color3.fromRGB(255, 255, 255)
  Name.TextSize = 9
  Name.RichText = true
+ Name.BorderSizePixel = 1
  
  Element.Name = "Element"
  Element.Parent = Background
