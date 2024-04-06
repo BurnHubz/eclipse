@@ -1315,12 +1315,12 @@ if not isfile("eclipse.wtf") then
                             textAdd.ZIndex = 2
                             textAdd.FontFace = Fonts.ProggyTiny
                             textAdd.Text = "+"
-                            textAdd.TextColor3 = Color3.fromRGB(244, 244, 244)
+                            textAdd.TextColor3 = Color3.fromRGB(14, 14, 14)
                             textAdd.TextSize = 9
                             textAdd.TextStrokeTransparency = 0.000
                             textAdd.TextXAlignment = Enum.TextXAlignment.Left
 
-                            textRemove.Name = "Add"
+                            textRemove.Name = "Remove"
                             textRemove.Parent = slider
                             textRemove.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                             textRemove.BackgroundTransparency = 1.000
@@ -1328,7 +1328,7 @@ if not isfile("eclipse.wtf") then
                             textRemove.ZIndex = 2
                             textRemove.FontFace = Fonts.ProggyTiny
                             textRemove.Text = "-"
-                            textRemove.TextColor3 = Color3.fromRGB(244, 244, 244)
+                            textRemove.TextColor3 = Color3.fromRGB(14, 14, 14)
                             textRemove.TextSize = 9
                             textRemove.TextStrokeTransparency = 0.000
                             textRemove.TextXAlignment = Enum.TextXAlignment.Left
@@ -1819,7 +1819,7 @@ if not isfile("eclipse.wtf") then
                             main.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
                             main.BorderColor3 = Color3.fromRGB(14, 14, 14)
                             main.Size = UDim2.new(1, 0, 1, 0)
-                            main.ScrollBarThickness = 0
+                            main.ScrollBarThickness = 1
 
                             holder.Name = "holder"
                             holder.Parent = main
@@ -1831,7 +1831,7 @@ if not isfile("eclipse.wtf") then
                             holder.Size = UDim2.new(1, 0, 1, 0)
                             holder.BottomImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
                             holder.CanvasSize = UDim2.new(0, 0, 0, 0)
-                            holder.ScrollBarThickness = 0
+                            holder.ScrollBarThickness = 1
                             holder.TopImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
                             holder.AutomaticCanvasSize = Enum.AutomaticSize.Y
                             holder.ScrollingEnabled = true
