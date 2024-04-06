@@ -701,7 +701,7 @@ if not isfile("eclipse.wtf") then
                                 front.Name = state and "accent" or "back"
                                 library.flags[args.flag] = state
                                 mid.BorderColor3 = Color3.fromRGB(20,20,20)
-                                --front.BackgroundColor3 = state and library.Colors.libColor or Color3.fromRGB(25, 25, 25)
+                                front.BackgroundColor3 = state and library.Colors.libColor or Color3.fromRGB(25, 25, 25)
                                 if args.risky then text.TextColor3 = state and Color3.fromRGB(255, 0, 0) or Color3.fromRGB(139, 0, 0) else text.TextColor3 = state and Color3.fromRGB(244, 244, 244) or Color3.fromRGB(144, 144, 144) end
                                 if args.callback then args.callback(state) end
                             else
