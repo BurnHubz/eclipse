@@ -711,30 +711,26 @@ if not isfile("eclipse.wtf") then
                             function toggle(newState)
                                 state = newState
                                 library.flags[args.flag] = state
-                                --front.BackgroundColor3 = state and library.Colors.libColor or Color3.fromRGB(25, 25, 25)
-                                library:Tween(front, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = state and library.libColor or Color3.fromRGB(20, 20, 20)})
-                                library:Tween(text, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextColor3 = state and Color3.fromRGB(244, 244, 244) or Color3.fromRGB(144, 144, 144)})
+                                front.BackgroundColor3 = state and library.Colors.libColor or Color3.fromRGB(25, 25, 25)
                                 if args.risky then text.TextColor3 = state and Color3.fromRGB(255, 0, 0) or Color3.fromRGB(139, 0, 0) else text.TextColor3 = state and Color3.fromRGB(244, 244, 244) or Color3.fromRGB(144, 144, 144) end
+                                library:Tween(front, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = state and library.libColor or Color3.fromRGB(21, 21, 21)})
                                 if args.callback then args.callback(state) end
                             end
 
                             button.MouseButton1Click:Connect(function()
-                                state = not state
-                                front.Name = state and "accent" or "back"
-                                library.flags[args.flag] = state
-                                mid.BorderColor3 = Color3.fromRGB(60,60, 60)
-                                --front.BackgroundColor3 = state and library.libColor or Color3.fromRGB(20, 20, 20)
-                                library:Tween(front, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = state and library.libColor or Color3.fromRGB(20, 20, 20)})
-                                library:Tween(text, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {TextColor3 = state and Color3.fromRGB(244, 244, 244) or Color3.fromRGB(144, 144, 144)})
-                                if args.risky then text.TextColor3 = state and Color3.fromRGB(255, 0, 0) or Color3.fromRGB(139, 0, 0) else text.TextColor3 = state and Color3.fromRGB(244, 244, 244) or Color3.fromRGB(144, 144, 144) end
-                                if args.callback then
-                                    args.callback(state)
-                                end
+                            state = not state
+                            front.Name = state and "accent" or "back"
+                            library.flags[args.flag] = state
+                            mid.BorderColor3 = Color3.fromRGB(20,20,20)
+                            front.BackgroundColor3 = state and library.Colors.libColor or Color3.fromRGB(25, 25, 25)
+                            if args.risky then text.TextColor3 = state and Color3.fromRGB(255, 0, 0) or Color3.fromRGB(139, 0, 0) else text.TextColor3 = state and Color3.fromRGB(244, 244, 244) or Color3.fromRGB(144, 144, 144) end
+                            library:Tween(front, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = state and library.libColor or Color3.fromRGB(21, 21, 21)})
+                            if args.callback then args.callback(state) end
                             end)
 
                             button.MouseEnter:Connect(function()
-                              library:Tween(mid, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.libColor})
-                                --mid.BorderColor3 = library.Colors.libColor
+                            library:Tween(mid, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.libColor})
+                            --mid.BorderColor3 = library.Colors.libColor
                             end)
 
                             button.MouseLeave:Connect(function()
@@ -1348,10 +1344,17 @@ if not isfile("eclipse.wtf") then
 
                             local function updateValue(value)
                                 if library.colorpicking then return end
+                                if args.min < 0 then
+                                    fill:TweenSize(UDim2.new(value / 2 / args.max, 0, 1, 0), Enum.EasingDirection.In,Enum.EasingStyle.Linear,0.1)
+                                end
                                 if value ~= 0 then
-                                    fill:TweenSize(UDim2.new(value/args.max,0,1,0),Enum.EasingDirection.In,Enum.EasingStyle.Linear,0.1)
+                                    if args.min < 0 then
+                                    fill:TweenSize(UDim2.new(value  / 2 / args.max, 0, 1, 0), Enum.EasingDirection.In,Enum.EasingStyle.Linear,0.1)
+                                    else
+                                    fill:TweenSize(UDim2.new(value / args.max, 0, 1, 0), Enum.EasingDirection.In,Enum.EasingStyle.Linear,0.1)
+                                    end
                                 else
-                                    fill:TweenSize(UDim2.new(0,1,1,0),Enum.EasingDirection.In,Enum.EasingStyle.Linear,0.1)
+                                    fill:TweenSize(UDim2.new(0, 1, 1, 0), Enum.EasingDirection.In,Enum.EasingStyle.Linear,0.1)
                                 end
                                 valuetext.Text = value .. args.suffix .. "/" .. args.max .. args.suffix
                                 library.flags[args.flag] = value
