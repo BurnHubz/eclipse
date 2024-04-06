@@ -136,6 +136,7 @@ if not isfile("eclipse.wtf") then
  Name_2.Text = "Silent Aim: <font color=\"rgb(189, 172, 255)\">[MB1]</font>"
  Name_2.TextColor3 = Color3.fromRGB(125, 125, 125)
  Name_2.TextSize = 9
+ Name_2.BorderSizePixel = 1
  Name_2.RichText = true
  Name_2.Visible = false
  
