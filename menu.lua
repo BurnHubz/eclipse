@@ -1315,7 +1315,7 @@ if not isfile("eclipse.wtf") then
                             textAdd.ZIndex = 2
                             textAdd.FontFace = Fonts.ProggyTiny
                             textAdd.Text = "+"
-                            textAdd.TextColor3 = Color3.fromRGB(14, 14, 14)
+                            textAdd.TextColor3 = Color3.fromRGB(125, 125, 125)
                             textAdd.TextSize = 9
                             textAdd.TextStrokeTransparency = 0.000
                             textAdd.TextXAlignment = Enum.TextXAlignment.Left
@@ -1328,7 +1328,7 @@ if not isfile("eclipse.wtf") then
                             textRemove.ZIndex = 2
                             textRemove.FontFace = Fonts.ProggyTiny
                             textRemove.Text = "-"
-                            textRemove.TextColor3 = Color3.fromRGB(14, 14, 14)
+                            textRemove.TextColor3 = Color3.fromRGB(125, 125, 125)
                             textRemove.TextSize = 9
                             textRemove.TextStrokeTransparency = 0.000
                             textRemove.TextXAlignment = Enum.TextXAlignment.Left
