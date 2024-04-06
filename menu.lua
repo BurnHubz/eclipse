@@ -753,7 +753,7 @@ if not isfile("eclipse.wtf") then
                                 Name.AnchorPoint = Vector2.new(0.5, 0.5)
                                 Name.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
                                 Name.BorderColor3 = Color3.fromRGB(25, 25, 25)
-                                Name.BorderSizePixel = 0
+                                Name.BorderSizePixel = 1
                                 Name.Position = UDim2.new(0.5, 0, -1.85000002, 0)
                                 Name.Size = UDim2.new(1, 0, 1, 0)
                                 Name.FontFace = Fonts.ProggyTiny
