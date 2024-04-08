@@ -797,11 +797,11 @@ if not isfile("eclipse.wtf") then
                                 local Toggle = false
                                 function updateValue(val)
                                     if library.colorpicking then return end
-                                    library.flags[args.flag] = val
-                                    if val.Name == "Unknown" or val.Name == "Unknown" then
-                                    button.Text = "None"
-                                    else
-                                    button.Text = keynames[val] or ""..val.Name..""
+                                        library.flags[args.flag] = val
+                                        if val.Name == "Unknown" or val.Name == "Unknown" then
+                                        button.Text = "None"
+                                        else
+                                        button.Text = keynames[val] or ""..val.Name..""
                                     end
                                 end
                                 InputService.InputBegan:Connect(function(input)
