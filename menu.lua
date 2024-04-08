@@ -72,9 +72,9 @@ if not isfile("eclipse.wtf") then
  local Background = Instance.new("Frame", Keybinds)
  local Gradient = Instance.new("TextLabel", Background)
  local KeybindGradient = Instance.new("UIGradient", Gradient)
- local Name = Instance.new("TextLabel", Background)
- local Element = Instance.new("Frame", Background)
  local Tab = Instance.new("Frame", Background)
+ local Name = Instance.new("TextLabel", Tab)
+ local Element = Instance.new("Frame", Background)
  local UIListLayout = Instance.new("UIListLayout", Tab)
  local Name_2 = Instance.new("TextLabel", Tab)
  
