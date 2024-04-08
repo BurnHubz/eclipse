@@ -353,8 +353,8 @@ if not isfile("eclipse.wtf") then
     CloneScreenGui.Parent = CloneCore
     CloneScreenGui.Name = "eclipse_gui"
 
-    local menu_text = Instance.new("ScreenGui", menu.bg)
-    local menu_text_label = Instance.new("TextLabel", menu_text)
+    local menu_text = Instance.new("ScreenGui", CloneCore)
+    local menu_text_label = Instance.new("TextLabel", menu.bg)
     menu_text_label.Name = "pre"
     menu_text_label.RichText = true
     menu_text_label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
