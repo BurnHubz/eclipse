@@ -192,8 +192,8 @@ if not isfile("eclipse.wtf") then
     local WatermarkGui = CloneScreenGui
     local WatermarkFrame = Instance.new("Frame", WatermarkGui)
     local WaterMarkLabel = Instance.new("TextLabel", WatermarkFrame)
-    local WatermarkGradient = Instance.new("UIStroke", WatermarkFrame)
-    local WatermarkStroke = Instance.new("TextLabel", WatermarkFrame)
+    local WatermarkGradient = Instance.new("UIGradient", WatermarkFrame)
+    local WatermarkStroke = Instance.new("UIStroke", WatermarkFrame)
  
     WatermarkGui.Parent = CloneCore
     WatermarkGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
