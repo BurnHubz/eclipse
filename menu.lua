@@ -31,7 +31,7 @@ if not isfile("eclipse.wtf") then
  
  --vars
  local CloneCore = cloneref(game.CoreGui)
- local CloneScreenGui = Instance.new("ScreenGui")
+ local CloneScreenGui = cloneref(Instance.new("ScreenGui"))
  local RunService = game:GetService("RunService")
  local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
  local InputService = game:GetService("UserInputService")
