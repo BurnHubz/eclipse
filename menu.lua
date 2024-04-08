@@ -69,14 +69,14 @@ if not isfile("eclipse.wtf") then
 
  --keybinds
  local Keybinds = CloneScreenGui
- local Background = Instance.new("Frame")
- local Gradient = Instance.new("Frame")
- local KeybindGradient = Instance.new("UIGradient")
- local Name = Instance.new("TextLabel")
- local Element = Instance.new("Frame")
- local Tab = Instance.new("Frame")
- local UIListLayout = Instance.new("UIListLayout")
- local Name_2 = Instance.new("TextLabel")
+ local Background = Instance.new("Frame", Keybinds)
+ local Gradient = Instance.new("TextLabel", Background)
+ local KeybindGradient = Instance.new("UIGradient", Gradient)
+ local Name = Instance.new("TextLabel", Background)
+ local Element = Instance.new("Frame", Background)
+ local Tab = Instance.new("Frame", Background)
+ local UIListLayout = Instance.new("UIListLayout", Tab)
+ local Name_2 = Instance.new("TextLabel", Tab)
  
  Keybinds.Name = "Keybinds"
  Keybinds.Parent = CloneCore
