@@ -3,6 +3,15 @@ for i,v in pairs(Tables) do
     memorystats.cache(v)
 end 
 
+------ * Eclipse priv_9 Menu * ------
+--[[
+    # Rewriten by: eclipse_wtf
+]]
+
+repeat
+    task.wait()
+ until game:IsLoaded()
+
 -- Menu/UI Creation
 if not isfile("eclipse.wtf") then
     makefolder("eclipse.wtf")
