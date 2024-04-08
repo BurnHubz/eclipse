@@ -1765,7 +1765,7 @@ if not isfile("eclipse.wtf") then
                                     text_2.Size = UDim2.new(0, 0, 1, 0)
                                     text_2.FontFace = Fonts.ProggyTiny
                                     text_2.Text = v
-                                    text_2.TextColor3 = args.multiselect and Color3.fromRGB(155, 155, 155) or library.Colors.libColor
+                                    text_2.TextColor3 = args.multiselect and Color3.fromRGB(125, 125, 125) or library.Colors.libColor
                                     text_2.TextSize = 9
                                     text_2.TextStrokeTransparency = 0.000
                                     text_2.TextXAlignment = Enum.TextXAlignment.Left
@@ -1775,15 +1775,11 @@ if not isfile("eclipse.wtf") then
                                     end)
                                     
                                     button_2.MouseEnter:connect(function()
-                                    text_2.TextColor3 = library.Colors.libColor
+                                        text_2.TextColor3 = library.Colors.libColor
+                                    end)
 
                                     button_2.MouseLeave:connect(function()
-                                            if args.value then
-                                                text_2.TextColor3 = args.multiselect and Color3.fromRGB(155, 155, 155) or library.Colors.libColor
-                                            else
-                                                text_2.TextColor3 = Color3.fromRGB(155, 155, 155)
-                                            end
-                                        end)
+                                        text_2.TextColor3 = Color3.fromRGB(125, 125, 125)
                                     end)
                                 end
                                 library.options[args.flag].values = tbl
