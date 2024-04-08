@@ -84,7 +84,6 @@ if not isfile("eclipse.wtf") then
  Keybinds.ResetOnSpawn = false
  
  Background.Name = "Background"
- Background.Parent = Keybinds
  Background.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
  Background.BorderColor3 = Color3.fromRGB(25, 25, 25)
  Background.Position = UDim2.new(0.01, 0, 0.488, 0)
@@ -92,7 +91,6 @@ if not isfile("eclipse.wtf") then
  Background.Visible = false
  
  Gradient.Name = "Gradient"
- Gradient.Parent = Background
  Gradient.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
  Gradient.BorderColor3 = Color3.fromRGB(0, 0, 0)
  Gradient.BorderSizePixel = 0
@@ -100,10 +98,8 @@ if not isfile("eclipse.wtf") then
  Gradient.Size = UDim2.new(0, 180, 0, 1)
  
  KeybindGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(189, 172, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
- KeybindGradient.Parent = Gradient
  
  Name.Name = "Name"
- Name.Parent = Background
  Name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
  Name.BackgroundTransparency = 1.000
  Name.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -117,7 +113,6 @@ if not isfile("eclipse.wtf") then
  Name.BorderSizePixel = 1
  
  Element.Name = "Element"
- Element.Parent = Background
  Element.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
  Element.BorderColor3 = Color3.fromRGB(0, 0, 0)
  Element.BorderSizePixel = 0
@@ -125,7 +120,6 @@ if not isfile("eclipse.wtf") then
  Element.Size = UDim2.new(0, 140, 0, 1)
  
  Tab.Name = "Tab"
- Tab.Parent = Background
  Tab.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
  Tab.BackgroundTransparency = 0
  Tab.BorderSizePixel = 1
@@ -134,12 +128,10 @@ if not isfile("eclipse.wtf") then
  Tab.Position = UDim2.new(-0.007, 0, 1.833, 0)
  Tab.Size = UDim2.new(1.01199996, 0, 0, -20)
  
- UIListLayout.Parent = Tab
  UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
  UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
  
  Name_2.Name = "Name"
- Name_2.Parent = Tab
  Name_2.AnchorPoint = Vector2.new(0.5, 0.5)
  Name_2.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
  Name_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
