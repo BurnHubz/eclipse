@@ -741,7 +741,7 @@ if not isfile("eclipse.wtf") then
                             end)
                             
                             button.MouseLeave:Connect(function()
-                                library:Tween(mid, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.fromRGB(20,20,20)})
+                                library:Tween(mid, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.fromRGB(25,25,25)})
                             end)                            
 
                             library.flags[args.flag] = false
@@ -1076,12 +1076,13 @@ if not isfile("eclipse.wtf") then
                                 mid.BorderColor3 = Color3.fromRGB(25,25,25)
                                 end)
 
-                                button2.MouseEnter:connect(function()
-                                mid.BorderColor3 = library.Colors.libColor
+                                button2.MouseEnter:Connect(function()
+                                    library:Tween(mid, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {BorderColor3 = library.Colors.libColor})
                                 end)
-                                button2.MouseLeave:connect(function()
-                                mid.BorderColor3 = Color3.fromRGB(25,25,25)
-                                end)
+                                
+                                button2.MouseLeave:Connect(function()
+                                    library:Tween(mid, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.fromRGB(25,25,25)})
+                                end)  
 
                                 local function updateValue(value,fakevalue)
                                     if typeof(value) == "table" then value = fakevalue end
@@ -1215,12 +1216,13 @@ if not isfile("eclipse.wtf") then
                                 args.callback()
                             end
                             end)
-                            button.MouseEnter:connect(function()
-                            main.BorderColor3 = library.Colors.libColor
+                            button.MouseEnter:Connect(function()
+                                library:Tween(main, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {BorderColor3 = library.Colors.libColor})
                             end)
-                            button.MouseLeave:connect(function()
-                            main.BorderColor3 = Color3.fromRGB(39, 39, 39)
-                            end)
+                            
+                            button.MouseLeave:Connect(function()
+                                library:Tween(main, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.fromRGB(25,25,25)})
+                            end) 
                         end
                         function group:addSlider(args,sub)
                             if not args.flag or not args.max then return warn("⚠️ incorrect arguments ⚠️") end
@@ -1782,12 +1784,13 @@ if not isfile("eclipse.wtf") then
                                 frame.Visible = not frame.Visible
                             end
                             end)
-                            button.MouseEnter:connect(function()
-                            main.BorderColor3 = library.Colors.libColor
+                            button.MouseEnter:Connect(function()
+                                library:Tween(main, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {BorderColor3 = library.Colors.libColor})
                             end)
-                            button.MouseLeave:connect(function()
-                            main.BorderColor3 = Color3.fromRGB(1,1,1)
-                            end)
+                            
+                            button.MouseLeave:Connect(function()
+                                library:Tween(main, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.fromRGB(25,25,25)})
+                            end) 
 
                             table.insert(library.toInvis,frame)
                             library.flags[args.flag] = args.multiselect and {} or ""
@@ -2148,12 +2151,13 @@ if not isfile("eclipse.wtf") then
                             mid.BorderColor3 = Color3.fromRGB(25,25,25)
                             end)
 
-                            button.MouseEnter:connect(function()
-                            mid.BorderColor3 = library.Colors.libColor
+                            button.MouseEnter:Connect(function()
+                                library:Tween(mid, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {BorderColor3 = library.Colors.libColor})
                             end)
-                            button.MouseLeave:connect(function()
-                            mid.BorderColor3 = Color3.fromRGB(25,25,25)
-                            end)
+                            
+                            button.MouseLeave:Connect(function()
+                                library:Tween(mid, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.fromRGB(25,25,25)})
+                            end) 
 
                             local function updateValue(value,fakevalue)
                                 if typeof(value) == "table" then value = fakevalue end
