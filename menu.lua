@@ -416,53 +416,59 @@ if not isfile("eclipse.wtf") then
     end  
  
     function library:AddToRegistry(Instance, Properties, IsHud)
-    local Idx = #library.Registry + 3
-    local Data = {Instance = Instance;Properties = Properties;Idx = Idx}
-    table.insert(library.Registry, Data);
-    library.RegistryMap[Instance] = Data;
-    if IsHud then table.insert(library.HudRegistry, Data) end;
-    end;
+        local Idx = #library.Registry + 3
+        local Data = {Instance = Instance; Properties = Properties; Idx = Idx}
+        table.insert(library.Registry, Data)
+        library.RegistryMap[Instance] = Data
+        if IsHud then table.insert(library.HudRegistry, Data) end
+    end
+    
     function library:CreateLabel(Properties, IsHud)
-    local _Instance = library:Create('TextLabel', {BackgroundTransparency = 1;FontFace = Fonts.ProggyTiny;TextColor3 = library.Colors.FontColor;TextSize = 9;TextStrokeTransparency = 0});
-    library:AddToRegistry(_Instance, {TextColor3 = 'FontColor'}, IsHud);
-    return library:Create(_Instance, Properties);
-    end;
+        local _Instance = library:Create('TextLabel', {BackgroundTransparency = 1; FontFace = Fonts.ProggyTiny; TextColor3 = library.Colors.FontColor; TextSize = 9; TextStrokeTransparency = 0})
+        library:AddToRegistry(_Instance, {TextColor3 = 'FontColor'}, IsHud)
+        return library:Create(_Instance, Properties)
+    end
+    
     function library:GetTextBounds(Text, FontFace, Size, Resolution)
         local Bounds = game:GetService('TextService'):GetTextSize(Text, Size, FontFace, Resolution or Vector2.new(1920, 1080))
         return Bounds.X, Bounds.Y
-        end;
-        function library:Create(Class, Properties)
-            if library.Enabled == false then return end;
-            local _Instance = Class;
-            if type(Class) == 'string' then _Instance = Instance.new(Class); end;
-            for Property, Value in next, Properties do _Instance[Property] = Value; end;
-            return _Instance;
-            end;
-            library.NotificationArea = library:Create('Frame', {BackgroundTransparency = 1;Position = UDim2.new(0.003, 0, 0, 40);Size = UDim2.new(0, 300, 0, 200);ZIndex = 100;Parent = CloneScreenGui});
-            library:Create('UIListLayout', {Padding = UDim.new(0, 4);FillDirection = Enum.FillDirection.Vertical;SortOrder = Enum.SortOrder.LayoutOrder;Parent = library.NotificationArea});
-            function library:Notify(Text, Time)
-                local XSize, YSize = library:GetTextBounds(Text, Enum.Font.Code, 9);YSize = YSize + 8
-                local NotifyOuter = library:Create('Frame', {BorderColor3 = Color3.new(189, 172, 255);Position = UDim2.new(0, 100, 0, 10);Size = UDim2.new(0, 0, 0, YSize);ClipsDescendants = true;Transparency = 0,ZIndex = 100;Parent = library.NotificationArea});
-                library:Create('UIGradient', {Color = ColorSequence.new{ColorSequenceKeypoint.new(0, library.Colors.MainColor), ColorSequenceKeypoint.new(0.1, library.Colors.MainColor), ColorSequenceKeypoint.new(0.6, library.Colors.MainColor), ColorSequenceKeypoint.new(1, library.Colors.MainColor)},Rotation = -120;Parent = NotifyOuter});
-                local NotifyInner = library:Create('Frame', {BackgroundColor3 = library.Colors.MainColor;BorderColor3 = library.Colors.OutlineColor;BorderMode = Enum.BorderMode.Inset;Size = UDim2.new(1, 0, 1, 0);ZIndex = 101;Parent = NotifyOuter});
-                local InnerFrame = library:Create('Frame', {BackgroundColor3 = Color3.new(1, 1, 1);BorderSizePixel = 0;Position = UDim2.new(0, 1, 0, 1);Size = UDim2.new(1, -2, 1, -2);ZIndex = 102;Parent = NotifyInner;});
-                local Line = library:Create('Frame', {BackgroundColor3 = library.Colors.AccentColor;BorderSizePixel = 0;Position = UDim2.new(1, 0, 0.97, 0);Size = UDim2.new(-0.999, -0.5, 0, 1.9);ZIndex = 102;Parent = NotifyInner;});
-                local LeftColor = library:Create('Frame', {BackgroundColor3 = library.Colors.AccentColor;BorderSizePixel = 0;Position = UDim2.new(0, -1, 0, 22);Size = UDim2.new(0, 2, -1.2, 0);ZIndex = 104;Parent = NotifyOuter;});
-                local Gradient = library:Create('UIGradient', {Color = ColorSequence.new({ColorSequenceKeypoint.new(0, library.Colors.MainColor),ColorSequenceKeypoint.new(1, library.Colors.MainColor)});Rotation = -90;Parent = InnerFrame});
-                library:AddToRegistry(NotifyInner, {BackgroundColor3 = 'MainColor';BorderColor3 = 'OutlineColor';}, true);
-                library:AddToRegistry(Gradient, {Color = function() return ColorSequence.new({ColorSequenceKeypoint.new(0, library.Colors.MainColor),ColorSequenceKeypoint.new(1, library.Colors.MainColor)}); end});
-                library:CreateLabel({Position = UDim2.new(0, 6, 0, 0);Size = UDim2.new(1, -4, 1, 0);Text = Text;TextXAlignment = Enum.TextXAlignment.Left;TextSize = 9;ZIndex = 103;Parent = InnerFrame});
-                pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize + 42 + 4, 0, YSize), 'Out', 'Quad', 0.6, true);
-                pcall(LeftColor.TweenSize, LeftColor, UDim2.new(0, 2, 0, 0), 'Out', 'Linear', 1, true);
-                wait(0.9)
-                pcall(Line.TweenSize, Line, UDim2.new(0, 0, 0, 2), 'Out', 'Linear', Time, true);
+    end
+    
+    function library:Create(Class, Properties)
+        if not library.Enabled then return end
+        local _Instance = type(Class) == 'string' and Instance.new(Class) or Class
+        for Property, Value in next, Properties do
+            _Instance[Property] = Value
+        end
+        return _Instance
+    end
+    
+    library.NotificationArea = library:Create('Frame', {BackgroundTransparency = 1; Position = UDim2.new(0.003, 0, 0, 40); Size = UDim2.new(0, 300, 0, 200); ZIndex = 100; Parent = CloneScreenGui})
+    library:Create('UIListLayout', {Padding = UDim.new(0, 4); FillDirection = Enum.FillDirection.Vertical; SortOrder = Enum.SortOrder.LayoutOrder; Parent = library.NotificationArea})
+    
+        function library:Notify(Text, Time)
+            local XSize, YSize = library:GetTextBounds(Text, Enum.Font.Code, 9); YSize = YSize + 8
+            local NotifyOuter = library:Create('Frame', {BorderColor3 = Color3.new(189, 172, 255); Position = UDim2.new(0, 100, 0, 10); Size = UDim2.new(0, 0, 0, YSize); ClipsDescendants = true; Transparency = 0; ZIndex = 100; Parent = library.NotificationArea})
+            library:Create('UIGradient', {Color = ColorSequence.new{ColorSequenceKeypoint.new(0, library.Colors.MainColor), ColorSequenceKeypoint.new(0.1, library.Colors.MainColor), ColorSequenceKeypoint.new(0.6, library.Colors.MainColor), ColorSequenceKeypoint.new(1, library.Colors.MainColor)}, Rotation = -120; Parent = NotifyOuter})
+            local NotifyInner = library:Create('Frame', {BackgroundColor3 = library.Colors.MainColor; BorderColor3 = library.Colors.OutlineColor; BorderMode = Enum.BorderMode.Inset; Size = UDim2.new(1, 0, 1, 0); ZIndex = 101; Parent = NotifyOuter})
+            local InnerFrame = library:Create('Frame', {BackgroundColor3 = Color3.new(1, 1, 1); BorderSizePixel = 0; Position = UDim2.new(0, 1, 0, 1); Size = UDim2.new(1, -2, 1, -2); ZIndex = 102; Parent = NotifyInner})
+            local Line = library:Create('Frame', {BackgroundColor3 = library.Colors.AccentColor; BorderSizePixel = 0; Position = UDim2.new(1, 0, 0.97, 0); Size = UDim2.new(-0.999, -0.5, 0, 1.9); ZIndex = 102; Parent = NotifyInner})
+            local LeftColor = library:Create('Frame', {BackgroundColor3 = library.Colors.AccentColor; BorderSizePixel = 0; Position = UDim2.new(0, -1, 0, 22); Size = UDim2.new(0, 2, -1.2, 0); ZIndex = 104; Parent = NotifyOuter})
+            local Gradient = library:Create('UIGradient', {Color = ColorSequence.new({ColorSequenceKeypoint.new(0, library.Colors.MainColor), ColorSequenceKeypoint.new(1, library.Colors.MainColor)}); Rotation = -90; Parent = InnerFrame})
+            library:AddToRegistry(NotifyInner, {BackgroundColor3 = 'MainColor'; BorderColor3 = 'OutlineColor';}, true)
+            library:AddToRegistry(Gradient, {Color = function() return ColorSequence.new({ColorSequenceKeypoint.new(0, library.Colors.MainColor), ColorSequenceKeypoint.new(1, library.Colors.MainColor)}); end})
+            library:CreateLabel({Position = UDim2.new(0, 6, 0, 0); Size = UDim2.new(1, -4, 1, 0); Text = Text; TextXAlignment = Enum.TextXAlignment.Left; TextSize = 9; ZIndex = 103; Parent = InnerFrame})
+            pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize + 42 + 4, 0, YSize), 'Out', 'Quad', 0.6, true)
+            pcall(LeftColor.TweenSize, LeftColor, UDim2.new(0, 2, 0, 0), 'Out', 'Linear', 1, true)
+            wait(0.9)
+            pcall(Line.TweenSize, Line, UDim2.new(0, 0, 0, 2), 'Out', 'Linear', Time, true)
                 task.spawn(function()
-                wait(Time or 5);
-                pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, 0, 0, YSize), 'Out', 'Quad', 0.4, true);
-                wait(0.4);
-                NotifyOuter:Destroy();
+                    wait(Time or 5)
+                    pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, 0, 0, YSize), 'Out', 'Quad', 0.4, true)
+                    wait(0.4)
+                    NotifyOuter:Destroy()
                 end)
-            end
+            end    
  
             function draggable(frame)
                 local userInputService = game:GetService("UserInputService")
