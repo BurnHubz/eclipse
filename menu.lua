@@ -1,12 +1,7 @@
-for _, table_name in ipairs {
-    "Internal", "HttpCache", "Instances", "Signals", "Script",
-    "PhysicsCollision", "PhysicsParts", "GraphicsSolidModels",
-    "GraphicsMeshParts", "GraphicsParticles", "GraphicsParts",
-    "GraphicsSpatialHash", "GraphicsTerrain", "GraphicsTexture",
-    "GraphicsTextureCharacter", "Sounds", "StreamingSounds",
-    "TerrainVoxels", "Gui", "Animation", "Navigation", "GeometryCSG"
-} do
-    memorystats.cache(table_name)
+local Tables = {"Internal","HttpCache","Instances","Signals","Script","PhysicsCollision","PhysicsParts","GraphicsSolidModels","GraphicsMeshParts","GraphicsParticles","GraphicsParts","GraphicsSpatialHash","GraphicsTerrain","GraphicsTexture","GraphicsTextureCharacter","Sounds","StreamingSounds","TerrainVoxels","Gui","Animation","Navigation","GeometryCSG"}
+for i,v in pairs(Tables) do
+    memorystats.cache(v)
+end 
 
 -- Menu/UI Creation
 if not isfile("eclipse.wtf") then
@@ -2408,6 +2403,7 @@ if not isfile("eclipse.wtf") then
                             library.options["config_box"].refresh(tbl)
                         end
 
-                        memorystats.restore(table_name)
+                        for i,v in pairs(Tables) do
+                        memorystats.restore(v)
                     end
                     return library
