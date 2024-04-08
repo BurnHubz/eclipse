@@ -737,12 +737,12 @@ if not isfile("eclipse.wtf") then
                             end)
 
                             button.MouseEnter:Connect(function()
-                            library:Tween(mid, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {BorderColor3 = library.Colors.libColor})
+                                library:Tween(mid, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {BorderColor3 = library.Colors.libColor})
                             end)
-
+                            
                             button.MouseLeave:Connect(function()
-                            library:Tween(mid, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.Colors.libColor})
-                            end)
+                                library:Tween(mid, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.Colors.libColor})
+                            end)                            
 
                             library.flags[args.flag] = false
                             library.options[args.flag] = {text = "",type = "toggle",gui = args.gui,changeState = toggle,skipflag = args.skipflag,oldargs = args,toggle = state,risky = args.risky or false,riskcfg = riskyCfg}
