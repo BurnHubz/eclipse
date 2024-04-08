@@ -1165,7 +1165,7 @@ if not isfile("eclipse.wtf") then
                         end
                         function group:addButton(args)
                             if not args.callback or not args.text then return warn("⚠️ incorrect arguments ⚠️") end
-                            groupbox.Size += UDim2.new(0, 0, 0, 19)
+                            groupbox.Size += UDim2.new(0, 0, 0, 20)
 
                             local buttonframe = Instance.new("Frame")
                             local bg = Instance.new("Frame")
@@ -1178,7 +1178,7 @@ if not isfile("eclipse.wtf") then
                             buttonframe.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                             buttonframe.BackgroundTransparency = 1.000
                             buttonframe.BorderSizePixel = 0
-                            buttonframe.Size = UDim2.new(1, 0, 0, 22)
+                            buttonframe.Size = UDim2.new(1, 0, 0, 20)
 
                             bg.Name = "bg"
                             bg.Parent = buttonframe
@@ -1186,7 +1186,7 @@ if not isfile("eclipse.wtf") then
                             bg.BorderColor3 = Color3.fromRGB(25, 25, 25)
                             bg.BorderSizePixel = 2
                             bg.Position = UDim2.new(0.02, -1, 0.3, 0)
-                            bg.Size = UDim2.new(0, 205, 0, 16)
+                            bg.Size = UDim2.new(0, 205, 0, 15)
 
                             main.Name = "main"
                             main.Parent = bg
