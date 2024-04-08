@@ -737,11 +737,11 @@ if not isfile("eclipse.wtf") then
                             end)
 
                             button.MouseEnter:Connect(function()
-                            mid.BorderColor3 = library.Colors.libColor
+                            library:Tween(mid, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {BorderColor3 = library.Colors.libColor})
                             end)
 
                             button.MouseLeave:Connect(function()
-                            mid.BorderColor3 = Color3.fromRGB(20, 20, 20)
+                            library:Tween(mid, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.Colors.libColor})
                             end)
 
                             library.flags[args.flag] = false
