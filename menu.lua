@@ -665,7 +665,7 @@ if not isfile("eclipse.wtf") then
                             mid.Name = "mid"
                             mid.Parent = tobble
                             mid.BackgroundColor3 = Color3.fromRGB(69, 23, 255)
-                            mid.BorderColor3 = Color3.fromRGB(20,20,20)
+                            mid.BorderColor3 = Color3.fromRGB(25,25,25)
                             mid.BorderSizePixel = 2
                             mid.Size = UDim2.new(0, 12, 0, 12)
 
@@ -1183,7 +1183,7 @@ if not isfile("eclipse.wtf") then
                             bg.Name = "bg"
                             bg.Parent = buttonframe
                             bg.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
-                            bg.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                            bg.BorderColor3 = Color3.fromRGB(25, 25, 25)
                             bg.BorderSizePixel = 2
                             bg.Position = UDim2.new(0.02, -1, 0.15, 0)
                             bg.Size = UDim2.new(0, 205, 0, 15)
@@ -1776,6 +1776,10 @@ if not isfile("eclipse.wtf") then
                                     
                                     button_2.MouseEnter:connect(function()
                                         text_2.TextColor3 = library.Colors.libColor
+                                    end)
+
+                                    button_2.MouseLeave:connect(function()
+                                        text_2.TextColor3 = Color3.fromRGB(125, 125, 125)
                                     end)
                                 end
                                 library.options[args.flag].values = tbl
