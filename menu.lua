@@ -353,16 +353,19 @@ if not isfile("eclipse.wtf") then
     CloneScreenGui.Parent = CloneCore
     CloneScreenGui.Name = "eclipse_gui"
 
-    local menu_text = Instance.new("ScreenGui", menu.Parent)
+    local menu_text = Instance.new("ScreenGui", menu.bg)
     local menu_text_label = Instance.new("TextLabel", menu_text)
-    menu_text_label.BackgroundTransparency = 1
-    menu_text_label.AnchorPoint = Vector2.new(0.5, 0.5)
-    menu_text_label.Position = UDim2.new(0.5, 0, 0.5, 0)
-    menu_text_label.TextSize = 22
-    menu_text_label.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
-    menu_text_label.TextStrokeTransparency = 0
-    menu_text_label.Text = "[eclipse.wtf] Join a server"
-    menu_text_label.Size = UDim2.new(1, 0, 1, 0)
+    menu_text_label.Name = "pre"
+    menu_text_label.RichText = true
+    menu_text_label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    menu_text_label.BackgroundTransparency = 1.000
+    menu_text_label.Position = UDim2.new(0, 4, 0, -43)
+    menu_text_label.Size = UDim2.new(0, 802, 0, 24)
+    menu_text_label.FontFace = Fonts.ProggyTiny
+    menu_text_label.Text = library.Title
+    menu_text_label.TextColor3 = Color3.fromRGB(74, 74, 74)
+    menu_text_label.TextSize = 9
+    menu_text_label.TextStrokeTransparency = 0.000
  
     local BottomBar = Instance.new("Frame")
     local BuildLabel = Instance.new("TextLabel")
