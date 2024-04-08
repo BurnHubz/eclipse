@@ -1778,7 +1778,7 @@ if not isfile("eclipse.wtf") then
                                     text_2.TextColor3 = library.Colors.libColor
 
                                     button_2.MouseLeave:connect(function()
-                                            if args.values[1] then
+                                            if args.value then
                                                 text_2.TextColor3 = args.multiselect and Color3.fromRGB(155, 155, 155) or library.Colors.libColor
                                             else
                                                 text_2.TextColor3 = Color3.fromRGB(155, 155, 155)
