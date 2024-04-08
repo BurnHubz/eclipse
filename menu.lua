@@ -243,23 +243,23 @@ if not isfile("eclipse.wtf") then
     local startPos
  
     WatermarkFrame.InputBegan:Connect(function(input)
-       if input.UserInputType == Enum.UserInputType.MouseButton1 then
-          dragging = true
-          dragStart = input.Position
-          startPos = WatermarkFrame.Position
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            dragging = true
+            dragStart = input.Position
+            startPos = WatermarkFrame.Position
  
-          input.Changed:Connect(function()
-             if input.UserInputState == Enum.UserInputState.End then
-                dragging = false
-             end
-          end)
-       end
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
     end)
  
     WatermarkFrame.InputChanged:Connect(function(input)
-       if input.UserInputType == Enum.UserInputType.MouseMovement then
-          dragInput = input
-       end
+        if input.UserInputType == Enum.UserInputType.MouseMovement then
+            dragInput = input
+        end
     end)
  
     game:GetService("UserInputService").InputChanged:Connect(function(input)
@@ -737,8 +737,7 @@ if not isfile("eclipse.wtf") then
                             end)
 
                             button.MouseEnter:Connect(function()
-                            --library:Tween(mid, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.libColor})
-                            mid.BorderColor3 = library.Colors.libColor
+                            library:Tween(mid, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.libColor})
                             end)
 
                             button.MouseLeave:Connect(function()
