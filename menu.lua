@@ -1781,7 +1781,7 @@ if not isfile("eclipse.wtf") then
                                             if args.values[1] then
                                                 text_2.TextColor3 = args.multiselect and Color3.fromRGB(155, 155, 155) or library.Colors.libColor
                                             else
-                                                text_2.TextColor3 = library.Colors.libColor
+                                                text_2.TextColor3 = Color3.fromRGB(155, 155, 155)
                                             end
                                         end)
                                     end)
