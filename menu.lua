@@ -1345,6 +1345,14 @@ if not isfile("eclipse.wtf") then
                             textRemove.TextStrokeTransparency = 0.000
                             textRemove.TextXAlignment = Enum.TextXAlignment.Left
 
+                            button.MouseEnter:Connect(function()
+                                library:Tween(bg, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {BorderColor3 = library.Colors.libColor})
+                            end)
+                            
+                            button.MouseLeave:Connect(function()
+                                library:Tween(bg, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.fromRGB(25,25,25)})
+                            end)            
+
                             local entered = false
                             local scrolling = false
                             local function round(value, decimalPlaces)
@@ -1706,15 +1714,15 @@ if not isfile("eclipse.wtf") then
                                     if v.ClassName ~= "Frame" then continue end
                                     v.off.TextColor3 = Color3.new(0.65,0.65,0.65)
                                     if v.Name == library.flags[args.flag] then
-                                        v.off.TextColor3 = library.Colors.libColor
-                                    end
+                                            v.off.TextColor3 = library.Colors.libColor
+                                        end
                                     end
                                     frame.Visible = false
                                     if library.flags[args.flag] then
                                     valuetext.Text = library.flags[args.flag]
                                     if args.callback then
-                                        args.callback(library.flags[args.flag])
-                                    end
+                                            args.callback(library.flags[args.flag])
+                                        end
                                     end
                                 end
                             end
@@ -1789,7 +1797,7 @@ if not isfile("eclipse.wtf") then
                             end)
                             
                             button.MouseLeave:Connect(function()
-                                library:Tween(main, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.fromRGB(25,25,25)})
+                                library:Tween(main, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.fromRGB(1,1,1)})
                             end) 
 
                             table.insert(library.toInvis,frame)
