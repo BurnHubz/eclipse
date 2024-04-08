@@ -1252,7 +1252,7 @@ if not isfile("eclipse.wtf") then
                             bg.Name = "bg"
                             bg.Parent = slider
                             bg.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-                            bg.BorderColor3 = Color3.fromRGB(1, 1, 1)
+                            bg.BorderColor3 = Color3.fromRGB(25,25,25)
                             bg.BorderSizePixel = 2
                             bg.Position = UDim2.new(0.02, -1, 0, 15)
                             bg.Size = UDim2.new(0, 205, 0, 13)
