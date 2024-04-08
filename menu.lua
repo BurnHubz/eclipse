@@ -1185,8 +1185,8 @@ if not isfile("eclipse.wtf") then
                             bg.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
                             bg.BorderColor3 = Color3.fromRGB(25, 25, 25)
                             bg.BorderSizePixel = 2
-                            bg.Position = UDim2.new(0.02, -1, 0.15, 0)
-                            bg.Size = UDim2.new(0, 205, 0, 15)
+                            bg.Position = UDim2.new(0.02, -1, 0.3, 0)
+                            bg.Size = UDim2.new(0, 205, 0, 16)
 
                             main.Name = "main"
                             main.Parent = bg
