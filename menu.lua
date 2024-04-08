@@ -17,7 +17,7 @@ if not isfile("eclipse.wtf") then
     makefolder("eclipse.wtf")
  end
  
- local menu = game:GetObjects("rbxassetid://16885195742")[1] 
+ local menu = game:GetObjects("rbxassetid://17072589594")[1] 
  local tabholder = menu.bg.bg.bg.bg.bg.bg.main.group;
  local tabviewer = menu.bg.bg.bg.bg.bg.bg.tabbuttons;
  for _, obj in pairs(menu:GetDescendants()) do
@@ -353,7 +353,6 @@ if not isfile("eclipse.wtf") then
     CloneScreenGui.Parent = CloneCore
     CloneScreenGui.Name = "eclipse_gui"
 
-    local menu_text = Instance.new("ScreenGui", CloneCore)
     local menu_text_label = Instance.new("TextLabel", menu.bg)
     menu_text_label.Name = "pre"
     menu_text_label.RichText = true
@@ -366,13 +365,12 @@ if not isfile("eclipse.wtf") then
     menu_text_label.TextColor3 = Color3.fromRGB(74, 74, 74)
     menu_text_label.TextSize = 9
     menu_text_label.TextStrokeTransparency = 0.000
- 
-    local BottomBar = Instance.new("Frame")
-    local BuildLabel = Instance.new("TextLabel")
-    local ActiveUserLabel = Instance.new("TextLabel")
+
+    local BottomBar = Instance.new("Frame", menu.bg)
+    local BuildLabel = Instance.new("TextLabel", BottomBar)
+    local ActiveUserLabel = Instance.new("TextLabel", BottomBar)
  
     BottomBar.Name = "BottomBar"
-    BottomBar.Parent = menu.bg
     BottomBar.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
     BottomBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
     BottomBar.BorderSizePixel = 0
@@ -380,7 +378,6 @@ if not isfile("eclipse.wtf") then
     BottomBar.Size = UDim2.new(1.02570701, -2, -0.00615911139, 24)
  
     BuildLabel.Name = "BuildLabel"
-    BuildLabel.Parent = BottomBar
     BuildLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     BuildLabel.BackgroundTransparency = 1.000
     BuildLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -396,7 +393,6 @@ if not isfile("eclipse.wtf") then
     BuildLabel.TextXAlignment = Enum.TextXAlignment.Left
  
     ActiveUserLabel.Name = "ActiveUserLabel"
-    ActiveUserLabel.Parent = BottomBar
     ActiveUserLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     ActiveUserLabel.BackgroundTransparency = 1.000
     ActiveUserLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -414,10 +410,6 @@ if not isfile("eclipse.wtf") then
         if obj.Name:lower():find('name_esp') then
            obj.Text = '<font color="rgb(189, 172, 255)">' .. game.Players.LocalPlayer.Name .. '</font>'
         end
-    end
-    menu.bg.Inventory_Viewer.Visible = false
-    function library:create_playerviewer(Visible)
-        menu.bg.Inventory_Viewer.Visible = Visible
     end
     function library:visualize(state)
         Background.Visible = state
@@ -491,10 +483,7 @@ if not isfile("eclipse.wtf") then
                 local startPosition
                 local startOffset
                 local lastInput
-                local tweenTime = 1
-                local easingStyle = Enum.EasingStyle.Quad
-                local easingDirection = Enum.EasingDirection.Out
-                
+
                 local function onMouseInput(input)
                     if not library.colorpicking then
                         local delta = input.Position - startPosition
