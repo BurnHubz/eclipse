@@ -1593,7 +1593,7 @@ if not isfile("eclipse.wtf") then
                             main.Parent = bg
                             main.Active = true
                             main.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
-                            main.BorderColor3 = Color3.fromRGB(1, 1, 1)
+                            main.BorderColor3 = Color3.fromRGB(25, 25, 25)
                             main.Size = UDim2.new(1, 0, 1, 0)
                             main.CanvasSize = UDim2.new(0, 0, 0, 0)
                             main.ScrollBarThickness = 0
@@ -1697,11 +1697,11 @@ if not isfile("eclipse.wtf") then
                                     for i,v in next, holder:GetChildren() do
                                     if v.ClassName ~= "Frame" then continue end
                                     v.off.TextColor3 = Color3.fromRGB(155, 155, 155)
-                                    for _i,_v in next, library.flags[args.flag] do
-                                        if v.Name == _v then
-                                            v.off.TextColor3 = Color3.new(1,1,1)
+                                        for _i,_v in next, library.flags[args.flag] do
+                                            if v.Name == _v then
+                                                v.off.TextColor3 = Color3.new(1,1,1)
+                                            end
                                         end
-                                    end
                                     end
                                     valuetext.Text = buttonText
                                     if args.callback then
@@ -1752,7 +1752,7 @@ if not isfile("eclipse.wtf") then
                                     button_2.BorderSizePixel = 0
                                     button_2.Size = UDim2.new(1, 0, 1, 0)
                                     button_2.FontFace = Fonts.ProggyTiny
-                                    button_2.BorderColor3 = Color3.fromRGB(10,10,10)
+                                    button_2.BorderColor3 = Color3.fromRGB(25,25,25)
                                     button_2.Text = ""
                                     button_2.TextColor3 = Color3.fromRGB(0, 0, 0)
                                     button_2.TextSize = 9
@@ -1776,10 +1776,6 @@ if not isfile("eclipse.wtf") then
                                     
                                     button_2.MouseEnter:connect(function()
                                         text_2.TextColor3 = library.Colors.libColor
-                                    end)
-
-                                    button_2.MouseLeave:connect(function()
-                                        text_2.TextColor3 = Color3.fromRGB(125, 125, 125)
                                     end)
                                 end
                                 library.options[args.flag].values = tbl
