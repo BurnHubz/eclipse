@@ -352,20 +352,17 @@ if not isfile("eclipse.wtf") then
     CloneScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
     CloneScreenGui.Parent = CloneCore
     CloneScreenGui.Name = "eclipse_gui"
- 
-    local pre = Instance.new("TextLabel")
-    pre.Name = "pre"
-    pre.Parent = menu.bg
-    pre.RichText = true
-    pre.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    pre.BackgroundTransparency = 1.000
-    pre.Position = UDim2.new(0, 4, 0, -43)
-    pre.Size = UDim2.new(0, 802, 0, 24)
-    pre.FontFace = Fonts.ProggyTiny
-    pre.Text = library.Title
-    pre.TextColor3 = Color3.fromRGB(74, 74, 74)
-    pre.TextSize = 9
-    pre.TextStrokeTransparency = 0.000
+
+    local menu_text = Instance.new("ScreenGui", menu.Parent)
+    local menu_text_label = Instance.new("TextLabel", menu_text)
+    menu_text_label.BackgroundTransparency = 1
+    menu_text_label.AnchorPoint = Vector2.new(0.5, 0.5)
+    menu_text_label.Position = UDim2.new(0.5, 0, 0.5, 0)
+    menu_text_label.TextSize = 22
+    menu_text_label.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+    menu_text_label.TextStrokeTransparency = 0
+    menu_text_label.Text = "[eclipse.wtf] Join a server"
+    menu_text_label.Size = UDim2.new(1, 0, 1, 0)
  
     local BottomBar = Instance.new("Frame")
     local BuildLabel = Instance.new("TextLabel")
