@@ -274,8 +274,9 @@ if not isfile("eclipse.wtf") then
          rotateGradient()
          local time = os.date("%X", os.time())
          local ping = string.format('%.0f', game.Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
+         local uid = "1"
          local fpsValue = string.split(game.Stats.Workspace.Heartbeat:GetValueString(), ".")[1]
-         WaterMarkLabel.Text = 'eclipse.<font color="rgb(189, 172, 255)">wtf</font> - fps: <font color="rgb(189, 172, 255)">' .. fpsValue .. '</font> / ping: <font color="rgb(189, 172, 255)">' .. ping .. '</font> / time: <font color="rgb(189, 172, 255)">' .. time .. '</font>'
+         WaterMarkLabel.Text = 'eclipse.<font color="rgb(189, 172, 255)">wtf</font> - uid: <font color="rgb(189, 172, 255)">' .. uid .. '</font> / fps: <font color="rgb(189, 172, 255)">' .. fpsValue .. '</font> / ping: <font color="rgb(189, 172, 255)">' .. ping .. '</font> / time: <font color="rgb(189, 172, 255)">' .. time .. '</font>'
        end
     end)
     return Watermark
