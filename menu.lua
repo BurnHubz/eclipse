@@ -1771,16 +1771,15 @@ if not isfile("eclipse.wtf") then
                                     text_2.TextXAlignment = Enum.TextXAlignment.Left
 
                                     button_2.MouseButton1Click:Connect(function()
-                                    updateValue(v)
+                                        updateValue(v)
                                     end)
+                                    
                                     button_2.MouseEnter:connect(function()
-                                    button_2.BorderColor3 = library.Colors.libColor
-                                    button_2.BorderSizePixel = 2
+                                    text_2.TextColor3 = library.Colors.libColor
 
                                     button_2.MouseLeave:connect(function()
-                                    button_2.BorderColor3 = Color3.fromRGB(1,1,1)
-                                    button_2.BorderSizePixel = 0
-                                    end)
+                                    text_2.TextColor3 = Color3.fromRGB(155, 155, 155)
+                                        end)
                                     end)
                                 end
                                 library.options[args.flag].values = tbl
@@ -1797,7 +1796,7 @@ if not isfile("eclipse.wtf") then
                             end)
                             
                             button.MouseLeave:Connect(function()
-                                library:Tween(main, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.fromRGB(1,1,1)})
+                              library:Tween(main, TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = Color3.fromRGB(25,25,25)})
                             end) 
 
                             table.insert(library.toInvis,frame)
