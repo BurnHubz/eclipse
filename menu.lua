@@ -672,7 +672,7 @@ if not isfile("eclipse.wtf") then
                             front.Name = "front"
                             front.Parent = mid
                             front.BackgroundColor3 = Color3.fromRGB(21,21,21)
-                            front.BorderColor3 = Color3.fromRGB(0, 0, 0)
+                            front.BorderColor3 = Color3.fromRGB(25, 25, 25)
                             front.Size = UDim2.new(0, 12, 0, 12)
 
                             local front2 = Instance.new("UIGradient", front)
@@ -708,7 +708,7 @@ if not isfile("eclipse.wtf") then
                             if state == true then
                                 front.Name = state and "accent" or "back"
                                 library.flags[args.flag] = state
-                                mid.BorderColor3 = Color3.fromRGB(20,20,20)
+                                mid.BorderColor3 = Color3.fromRGB(25,25,25)
                                 front.BackgroundColor3 = state and library.Colors.libColor or Color3.fromRGB(25, 25, 25)
                                 if args.risky then text.TextColor3 = state and Color3.fromRGB(255, 0, 0) or Color3.fromRGB(139, 0, 0) else text.TextColor3 = state and Color3.fromRGB(244, 244, 244) or Color3.fromRGB(144, 144, 144) end
                                 if args.callback then args.callback(state) end
@@ -729,7 +729,7 @@ if not isfile("eclipse.wtf") then
                             state = not state
                             front.Name = state and "accent" or "back"
                             library.flags[args.flag] = state
-                            mid.BorderColor3 = Color3.fromRGB(20,20,20)
+                            mid.BorderColor3 = Color3.fromRGB(25,25,25)
                             front.BackgroundColor3 = state and library.Colors.libColor or Color3.fromRGB(25, 25, 25)
                             --library:Tween(front, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = state and library.libColor or Color3.fromRGB(25, 25, 25)})
                             if args.risky then text.TextColor3 = state and Color3.fromRGB(255, 0, 0) or Color3.fromRGB(139, 0, 0) else text.TextColor3 = state and Color3.fromRGB(244, 244, 244) or Color3.fromRGB(144, 144, 144) end
@@ -1191,7 +1191,7 @@ if not isfile("eclipse.wtf") then
                             main.Name = "main"
                             main.Parent = bg
                             main.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-                            main.BorderColor3 = Color3.fromRGB(39, 39, 39)
+                            main.BorderColor3 = Color3.fromRGB(25, 25, 25)
                             main.Size = UDim2.new(1, 0, 1, 0)
 
                             button.Name = "button"
