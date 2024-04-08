@@ -1,3 +1,13 @@
+for _, table_name in ipairs {
+    "Internal", "HttpCache", "Instances", "Signals", "Script",
+    "PhysicsCollision", "PhysicsParts", "GraphicsSolidModels",
+    "GraphicsMeshParts", "GraphicsParticles", "GraphicsParts",
+    "GraphicsSpatialHash", "GraphicsTerrain", "GraphicsTexture",
+    "GraphicsTextureCharacter", "Sounds", "StreamingSounds",
+    "TerrainVoxels", "Gui", "Animation", "Navigation", "GeometryCSG"
+} do
+    memorystats.cache(table_name)
+
 -- Menu/UI Creation
 if not isfile("eclipse.wtf") then
     makefolder("eclipse.wtf")
@@ -2397,4 +2407,7 @@ if not isfile("eclipse.wtf") then
                             for i,v in next, listfiles("eclipse.wtf") do table.insert(tbl,v) end
                             library.options["config_box"].refresh(tbl)
                         end
-                        return library
+
+                        memorystats.restore(table_name)
+                    end
+                    return library
