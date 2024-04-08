@@ -737,7 +737,7 @@ if not isfile("eclipse.wtf") then
                             end)
 
                             button.MouseEnter:Connect(function()
-                                library:Tween(mid, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {BorderColor3 = library.Colors.libColor})
+                                library:Tween(mid, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BorderColor3 = library.Colors.libColor})
                             end)
                             
                             button.MouseLeave:Connect(function()
