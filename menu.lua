@@ -338,9 +338,13 @@ if not isfile("eclipse.wtf") then
        [Enum.UserInputType.MouseButton2] = 'MB2',
        [Enum.UserInputType.MouseButton3] = 'MB3'
     }
+    
     menu.bg.Position = UDim2.new(0.5,-menu.bg.Size.X.Offset/2,0.5,-menu.bg.Size.Y.Offset/2)
     menu.Parent = CloneCore
     menu.Name = "eclipse_gui"
+    local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end)
+    local CloneScreenGui = cloneref(Instance.new("ScreenGui"))
+    ProtectGui(CloneScreenGui)   
     CloneScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
     CloneScreenGui.Parent = CloneCore
     CloneScreenGui.Name = "eclipse_gui"
