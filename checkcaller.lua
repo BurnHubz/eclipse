@@ -1,20 +1,31 @@
-local FallenGuardActor = getactors()[1]
-run_on_actor(FallenGuardActor, [[
-    local RealMemUsage = game:GetService("Stats"):GetTotalMemoryUsageMb()
+for _, actor in next, getactors() do
+    run_on_actor(actor, [[
+        local RunService = cloneref(game:GetService("RunService"))
+        local Stats = cloneref(game:GetService("Stats"))
 
-    local statsmeta = getrawmetatable(game:GetService("Stats"))
-    local old = statsmeta.__namecall
-    setreadonly(statsmeta, false)
+        local CurrMem = Stats:GetMemoryUsageMbForTag(Enum.DeveloperMemoryTag.Gui);
+        local Rand = 0
 
-    statsmeta.__namecall = newcclosure(function(self, ...)
-        local method = getnamecallmethod()
-        local args = {...}
+        RunService.Stepped:Connect(function()
+            local random = Random.new()
+            Rand = random:NextNumber(-0.1, 0.1);
+        end)
 
-        if method == "GetTotalMemoryUsageMb" then
-            local spoofVal = (math.random(-2, 2) + (math.random(1514, 6256) / 10000))
-            return RealMemUsage + spoofVal
+        local function GetReturn()
+            return CurrMem + Rand;
         end
 
-        return old(self, ...)
-    end)
-]])
+        local _MemBypass
+        _MemBypass = hookmetamethod(game, "__namecall", function(self, ...)
+            local method = getnamecallmethod();
+
+            if not checkcaller() then
+                if typeof(self) == "Instance" and (method == "GetMemoryUsageMbForTag" or method == "getMemoryUsageMbForTag") and self.ClassName == "Stats" then
+                    return GetReturn();
+                end
+            end
+
+            return _MemBypass(self, ...);
+        end)
+    ]])
+end
