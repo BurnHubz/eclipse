@@ -1,3 +1,8 @@
+local Tables = {"Internal","HttpCache","Instances","Signals","Script","PhysicsCollision","PhysicsParts","GraphicsSolidModels","GraphicsMeshParts","GraphicsParticles","GraphicsParts","GraphicsSpatialHash","GraphicsTerrain","GraphicsTexture","GraphicsTextureCharacter","Sounds","StreamingSounds","TerrainVoxels","Gui","Animation","Navigation","GeometryCSG"}
+for i,v in pairs(Tables) do
+    memorystats.cache(v)
+end
+
 ------ * Eclipse priv_9 Menu * ------
 --[[
     # Rewriten by: eclipse_wtf
@@ -2390,4 +2395,7 @@ if not isfile("eclipse.wtf") then
                             for i,v in next, listfiles("eclipse.wtf") do table.insert(tbl,v) end
                             library.options["config_box"].refresh(tbl)
                         end
+                        for i,v in pairs(Tables) do
+                        memorystats.restore(v)
+                    end
                     return library
