@@ -12,7 +12,6 @@ if not isfile("eclipse.wtf") then
     makefolder("eclipse.wtf")
  end
  
- pcall(function()
  local menu = game:GetObjects("rbxassetid://17072589594")[1] 
  local tabholder = menu.bg.bg.bg.bg.bg.bg.main.group;
  local tabviewer = menu.bg.bg.bg.bg.bg.bg.tabbuttons;
@@ -2351,29 +2350,32 @@ if not isfile("eclipse.wtf") then
                         end
 
                         function library:saveConfig()
-                            makefolder("eclipse.wtf")
-                            local name = library.flags["config_box"]
-                            if not name then
-                                error("Config name is nil")
-                                return
-                            end
-                            local jig = {}
-                            for i, v in pairs(library.flags) do
-                                if library.options[i].skipflag then
-                                    continue
+                            pcall(function()
+                                makefolder("eclipse.wtf")
+                                local name = library.flags["config_box"]
+                                if not name then
+                                    error("Config name is nil")
+                                    return
                                 end
-                                if typeof(v) == "Color3" then
-                                    jig[i] = {v.R, v.G, v.B}
-                                elseif typeof(v) == "EnumItem" then
-                                    jig[i] = {string.split(tostring(v), ".")[2], string.split(tostring(v), ".")[3]}
-                                else
-                                    jig[i] = v
+                                
+                                local jig = {}
+                                for i, v in pairs(library.flags) do
+                                    if library.options[i].skipflag then
+                                        continue
+                                    end
+                                    if typeof(v) == "Color3" then
+                                        jig[i] = {v.R, v.G, v.B}
+                                    elseif typeof(v) == "EnumItem" then
+                                        jig[i] = {string.split(tostring(v), ".")[2], string.split(tostring(v), ".")[3]}
+                                    else
+                                        jig[i] = v
+                                    end
                                 end
-                            end
-                            writefile(name, game:GetService("HttpService"):JSONEncode(jig))
-                            library:Notify("Successfully updated config " .. name .. ".cfg!", 5)
-                            library:refreshConfigs()
-                        end                        
+                                writefile(name, game:GetService("HttpService"):JSONEncode(jig))
+                                library:Notify("Successfully updated config " .. name .. ".cfg!", 5)
+                                library:refreshConfigs()
+                            end)
+                        end                                               
 
                         function library:loadConfig()
                             local name = library.flags["config_box"]
@@ -2417,4 +2419,3 @@ if not isfile("eclipse.wtf") then
                 end      
             end)()                         
             return library
-        end)
