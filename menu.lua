@@ -2419,10 +2419,7 @@ if not isfile("eclipse.wtf") then
                         end
 
                         function library:deleteConfig()
-                        local name = library.flags["config_name"]
-                        local filePath = "eclipse.wtf/" .. name .. ".cfg"
-                        if isfile(filePath) then
-                            delfile(filePath)
+                            if isfile(library.flags["config_box"]) then delfile(library.flags["config_box"])
                             library:refreshConfigs()
                         end
                     end
