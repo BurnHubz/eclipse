@@ -12,6 +12,7 @@ if not isfile("eclipse.wtf") then
     makefolder("eclipse.wtf")
  end
  
+ pcall(function()
  local menu = game:GetObjects("rbxassetid://17072589594")[1] 
  local tabholder = menu.bg.bg.bg.bg.bg.bg.main.group;
  local tabviewer = menu.bg.bg.bg.bg.bg.bg.tabbuttons;
@@ -2406,3 +2407,4 @@ if not isfile("eclipse.wtf") then
                     end      
                 end)()                         
                 return library
+            end)
