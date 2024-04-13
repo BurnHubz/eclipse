@@ -47,7 +47,6 @@ if not isfile("eclipse.wtf") then
  end
  
  -- custom fonts
- LPH_NO_VIRTUALIZE(function()
  local Fonts = {}
  function Fonts:Register_Font(Name, Weight, Style, Asset)
      if not isfile(Asset.Id) then
@@ -548,6 +547,7 @@ if not isfile("eclipse.wtf") then
                     end
                 end)
 
+                LPH_NO_VIRTUALIZE(function()
                 function library:Tween(...) TweenService:Create(...):Play() end
                     function library:addTab(name,image)
                         local newTab = tabholder.tab:Clone()
