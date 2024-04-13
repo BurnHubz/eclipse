@@ -6,9 +6,7 @@ if game.PlaceId == FallenId then
         pcall(function()
             script_key = readfile("ECLIPSE_KEY.txt")
             repeat task.wait() until getactors()[1] and getactors()[2] repeat wait() until game:GetService("Players").LocalPlayer.Character
-            task.wait(1);
             memorystats.cache("Gui")
-            task.wait();
             loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/b2e293addcf9a470164fe95eff5e92fc.lua"))()
         end)
     ]])
