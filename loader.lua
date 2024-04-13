@@ -1,7 +1,7 @@
-local FallenId = 10228136016
+local creatorId = game.CreatorId
 writefile("ECLIPSE_KEY.txt", script_key)
 
-if game.PlaceId == FallenId then
+if creatorId == 1154360 then
         queue_on_teleport([[
         pcall(function()
             script_key = readfile("ECLIPSE_KEY.txt")
