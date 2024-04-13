@@ -1,7 +1,7 @@
 local Tables = {"Internal","HttpCache","Instances","Signals","Script","PhysicsCollision","PhysicsParts","GraphicsSolidModels","GraphicsMeshParts","GraphicsParticles","GraphicsParts","GraphicsSpatialHash","GraphicsTerrain","GraphicsTexture","GraphicsTextureCharacter","Sounds","StreamingSounds","TerrainVoxels","Gui","Animation","Navigation","GeometryCSG"}
 for i,v in pairs(Tables) do
     memorystats.cache(v)
-end
+end 
 
 ------ * Eclipse priv_9 Menu * ------
 --[[
@@ -22,10 +22,10 @@ if not isfile("eclipse.wtf") then
  local tabviewer = menu.bg.bg.bg.bg.bg.bg.tabbuttons;
  for _, obj in pairs(menu:GetDescendants()) do
     if obj.Name:lower():find('userlabel') then
-        obj.Text = 'active user: <font color="rgb(189, 172, 255)">' .. game.Players.LocalPlayer.Name .. '</font>'
+        obj.Text = 'active user: <font color="rgb(100, 50, 210)">' .. game.Players.LocalPlayer.Name .. '</font>'
     end
     if obj.Name:lower():find('buildlabel') then
-        obj.Text = 'build: <font color="rgb(189, 172, 255)">Public</font>'
+        obj.Text = 'build: <font color="rgb(100, 50, 210)">Public</font>'
     end
  end
  
@@ -97,7 +97,7 @@ if not isfile("eclipse.wtf") then
  Gradient.Position = UDim2.new(0, 0, 0, 1)
  Gradient.Size = UDim2.new(0, 180, 0, 1)
  
- KeybindGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(189, 172, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+ KeybindGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(100, 50, 210)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
  
  Name.Name = "Name"
  Name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -106,7 +106,7 @@ if not isfile("eclipse.wtf") then
  Name.BorderSizePixel = 0
  Name.Size = UDim2.new(0, 175, 0, 28)
  Name.FontFace = Fonts.ProggyTiny
- Name.Text = "[<font color=\"rgb(189, 172, 255)\">Keybinds</font>]"
+ Name.Text = "[<font color=\"rgb(100, 50, 210)\">Keybinds</font>]"
  Name.TextColor3 = Color3.fromRGB(255, 255, 255)
  Name.TextSize = 9
  Name.RichText = true
@@ -139,7 +139,7 @@ if not isfile("eclipse.wtf") then
  Name_2.Position = UDim2.new(0.5, 0, -1.85000002, 0)
  Name_2.Size = UDim2.new(1, 0, 1, 0)
  Name_2.FontFace = Fonts.ProggyTiny
- Name_2.Text = "Silent Aim: <font color=\"rgb(189, 172, 255)\">[MB1]</font>"
+ Name_2.Text = "Silent Aim: <font color=\"rgb(100, 50, 210)\">[MB1]</font>"
  Name_2.TextColor3 = Color3.fromRGB(125, 125, 125)
  Name_2.TextSize = 9
  Name_2.BorderSizePixel = 1
@@ -192,7 +192,7 @@ if not isfile("eclipse.wtf") then
     
     WatermarkFrame.Parent = WatermarkGui
     WatermarkFrame.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
-    WatermarkFrame.BorderColor3 = Color3.fromRGB(189, 172, 255)
+    WatermarkFrame.BorderColor3 = Color3.fromRGB(100, 50, 210)
     WatermarkFrame.BorderSizePixel = 2
     WatermarkFrame.Position = UDim2.new(0.0452012382, 33, 0.0223325081, -48)
     WatermarkFrame.Size = UDim2.new(0, 200, 0, 20)
@@ -282,22 +282,22 @@ if not isfile("eclipse.wtf") then
          local ping = string.format('%.0f', game.Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
          local uid = "1"
          local fpsValue = string.split(game.Stats.Workspace.Heartbeat:GetValueString(), ".")[1]
-         WaterMarkLabel.Text = 'eclipse.<font color="rgb(189, 172, 255)">wtf</font> - uid: <font color="rgb(189, 172, 255)">' .. uid .. '</font> / fps: <font color="rgb(189, 172, 255)">' .. fpsValue .. '</font> / ping: <font color="rgb(189, 172, 255)">' .. ping .. '</font> / time: <font color="rgb(189, 172, 255)">' .. time .. '</font>'
+         WaterMarkLabel.Text = 'eclipse.<font color="rgb(100, 50, 210)">wtf</font> - uid: <font color="rgb(100, 50, 210)">' .. uid .. '</font> / fps: <font color="rgb(100, 50, 210)">' .. fpsValue .. '</font> / ping: <font color="rgb(100, 50, 210)">' .. ping .. '</font> / time: <font color="rgb(100, 50, 210)">' .. time .. '</font>'
        end
     end)
     return Watermark
  end
  
  local library = {
-    Title = 'eclipse.<font color="rgb(189, 172, 255)">wtf</font> || universal',
+    Title = 'eclipse.<font color="rgb(100, 50, 210)">wtf</font> || universal',
     keybind = Enum.KeyCode.RightBracket,
     Watermark = createWatermark(),
        Colors = {
-          libColor = Color3.fromRGB(189, 172, 255),
+          libColor = Color3.fromRGB(100, 50, 210),
           riskyColor = Color3.fromRGB(255, 0, 0),
           FontColor = Color3.fromRGB(255, 255, 255),
           MainColor = Color3.fromRGB(14, 14, 14),
-          AccentColor = Color3.fromRGB(189, 172, 255),
+          AccentColor = Color3.fromRGB(100, 50, 210),
           OutlineColor = Color3.fromRGB(15, 15, 15),
        },
        Enabled = true,
@@ -382,7 +382,7 @@ if not isfile("eclipse.wtf") then
     BuildLabel.Size = UDim2.new(-0.00151476054, 200, 2.14484048, -1)
     BuildLabel.FontFace = Fonts.ProggyTiny
     BuildLabel.RichText = true
-    BuildLabel.Text = "build: <font color=\"rgb(189, 172, 255)\">public</font>"
+    BuildLabel.Text = "build: <font color=\"rgb(100, 50, 210)\">public</font>"
     BuildLabel.TextColor3 = Color3.fromRGB(74, 74, 74)
     BuildLabel.TextSize = 9
     BuildLabel.TextWrapped = true
@@ -397,14 +397,14 @@ if not isfile("eclipse.wtf") then
     ActiveUserLabel.Size = UDim2.new(0.00125635799, 200, 4.04341888, -1)
     ActiveUserLabel.FontFace = Fonts.ProggyTiny
     ActiveUserLabel.RichText = true
-    ActiveUserLabel.Text = "active user: <font color=\"rgb(189, 172, 255)\">7d</font>"
+    ActiveUserLabel.Text = "active user: <font color=\"rgb(100, 50, 210)\">7d</font>"
     ActiveUserLabel.TextColor3 = Color3.fromRGB(74, 74, 74)
     ActiveUserLabel.TextSize = 9
     ActiveUserLabel.TextXAlignment = Enum.TextXAlignment.Right
  
     for _, obj in pairs(menu:GetDescendants()) do
         if obj.Name:lower():find('name_esp') then
-           obj.Text = '<font color="rgb(189, 172, 255)">' .. game.Players.LocalPlayer.Name .. '</font>'
+           obj.Text = '<font color="rgb(100, 50, 210)">' .. game.Players.LocalPlayer.Name .. '</font>'
         end
     end
     function library:visualize(state)
@@ -451,7 +451,7 @@ if not isfile("eclipse.wtf") then
     
         function library:Notify(Text, Time)
             local XSize, YSize = library:GetTextBounds(Text, Enum.Font.Code, 9); YSize = YSize + 8
-            local NotifyOuter = library:Create('Frame', {BorderColor3 = Color3.new(189, 172, 255); Position = UDim2.new(0, 100, 0, 10); Size = UDim2.new(0, 0, 0, YSize); ClipsDescendants = true; Transparency = 0; ZIndex = 100; Parent = library.NotificationArea})
+            local NotifyOuter = library:Create('Frame', {BorderColor3 = Color3.new(100, 50, 210); Position = UDim2.new(0, 100, 0, 10); Size = UDim2.new(0, 0, 0, YSize); ClipsDescendants = true; Transparency = 0; ZIndex = 100; Parent = library.NotificationArea})
             library:Create('UIGradient', {Color = ColorSequence.new{ColorSequenceKeypoint.new(0, library.Colors.MainColor), ColorSequenceKeypoint.new(0.1, library.Colors.MainColor), ColorSequenceKeypoint.new(0.6, library.Colors.MainColor), ColorSequenceKeypoint.new(1, library.Colors.MainColor)}, Rotation = -120; Parent = NotifyOuter})
             local NotifyInner = library:Create('Frame', {BackgroundColor3 = library.Colors.MainColor; BorderColor3 = library.Colors.OutlineColor; BorderMode = Enum.BorderMode.Inset; Size = UDim2.new(1, 0, 1, 0); ZIndex = 101; Parent = NotifyOuter})
             local InnerFrame = library:Create('Frame', {BackgroundColor3 = Color3.new(1, 1, 1); BorderSizePixel = 0; Position = UDim2.new(0, 1, 0, 1); Size = UDim2.new(1, -2, 1, -2); ZIndex = 102; Parent = NotifyInner})
@@ -565,8 +565,8 @@ if not isfile("eclipse.wtf") then
                         for i,v in next, library.tabbuttons do
                         local state = v == newButton
                         local tweenInfo = TweenInfo.new(0.3, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
-                        local imageTweenStart = TweenService:Create(v, tweenInfo, {ImageColor3 = Color3.fromRGB(189, 172, 255)})
-                        local textTweenStart = TweenService:Create(v.text, tweenInfo, {TextColor3 = Color3.fromRGB(189, 172, 255)})
+                        local imageTweenStart = TweenService:Create(v, tweenInfo, {ImageColor3 = Color3.fromRGB(100, 50, 210)})
+                        local textTweenStart = TweenService:Create(v.text, tweenInfo, {TextColor3 = Color3.fromRGB(100, 50, 210)})
                         local imageTweenEnd = TweenService:Create(v, tweenInfo, {ImageColor3 = Color3.fromRGB(25,25,25)})
                         local textTweenEnd = TweenService:Create(v.text, tweenInfo, {TextColor3 = Color3.fromRGB(125, 125, 125)})
                         if state then
@@ -820,14 +820,14 @@ if not isfile("eclipse.wtf") then
                                         if args.gui then
                                             Name.Visible = true
                                             if args.type == "hold" then
-                                                Name.Text = "<font color=\"rgb(255,255,255)\">" ..args.text.. ":</font>".." <font color=\"rgb(189, 172, 255)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                                Name.Text = "<font color=\"rgb(255,255,255)\">" ..args.text.. ":</font>".." <font color=\"rgb(100, 50, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
                                             else
                                                 if not Toggle then
                                                     Toggle = true
-                                                    Name.Text = "<font color=\"rgb(255,255,255)\">" ..args.text.. ":</font>".." <font color=\"rgb(189, 172, 255)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                                    Name.Text = "<font color=\"rgb(255,255,255)\">" ..args.text.. ":</font>".." <font color=\"rgb(100, 50, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
                                                 else
                                                     Toggle = false
-                                                    Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ": /font>".." <font color=\"rgb(189, 172, 255)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                                    Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ": /font>".." <font color=\"rgb(100, 50, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
                                                 end
                                             end
                                         end
@@ -842,14 +842,14 @@ if not isfile("eclipse.wtf") then
                                     if args.gui then
                                         Name.Visible = true
                                         if args.type == "hold" then
-                                            Name.Text = "<font color=\"rgb(255,255,255)\">" ..args.text.. ":</font>".." <font color=\"rgb(189, 172, 255)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                            Name.Text = "<font color=\"rgb(255,255,255)\">" ..args.text.. ":</font>".." <font color=\"rgb(100, 50, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
                                         else
                                             if not Toggle then
                                                 Toggle = true
-                                                Name.Text = "<font color=\"rgb(255,255,255)\">" ..args.text.. ":</font>".." <font color=\"rgb(189, 172, 255)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                                Name.Text = "<font color=\"rgb(255,255,255)\">" ..args.text.. ":</font>".." <font color=\"rgb(100, 50, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
                                             else
                                                 Toggle = false
-                                                Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ":</font>".." <font color=\"rgb(189, 172, 255)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                                Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ":</font>".." <font color=\"rgb(100, 50, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
                                             end
                                         end
                                     end
@@ -874,9 +874,9 @@ if not isfile("eclipse.wtf") then
                                                 if args.gui then
                                                     Name.Visible = true
                                                     if args.type == "hold" then
-                                                        Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ":</font>".." <font color=\"rgb(189, 172, 255)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                                        Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ":</font>".." <font color=\"rgb(100, 50, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
                                                     else
-                                                        Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ":</font>".." <font color=\"rgb(189, 172, 255)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                                        Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ":</font>".." <font color=\"rgb(100, 50, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
                                                     end
                                                 end
                                             end
@@ -908,7 +908,7 @@ if not isfile("eclipse.wtf") then
                                 local keyName = tostring(args.key):split(".")[3] -- Extracts the key name from the enum value
                                 if args.gui then
                                     Name.Visible = true
-                                    Name.Text = args.text..": <font color=\"rgb(189, 172, 255)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                    Name.Text = args.text..": <font color=\"rgb(100, 50, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
                                 end
 
                                 updateValue(args.key or Enum.KeyCode.Unknown)
@@ -2395,6 +2395,7 @@ if not isfile("eclipse.wtf") then
                             for i,v in next, listfiles("eclipse.wtf") do table.insert(tbl,v) end
                             library.options["config_box"].refresh(tbl)
                         end
+
                         for i,v in pairs(Tables) do
                         memorystats.restore(v)
                     end
