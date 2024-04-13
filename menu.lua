@@ -32,19 +32,6 @@ if not isfile("eclipse.wtf") then
  local InputService = game:GetService("UserInputService")
  local TweenService = game:GetService("TweenService")
  local HttpService = cloneref(game:GetService("HttpService"))
-
- --// LPH
- if not LPH_OBFUSCATED then
-    LPH_JIT = function(...) return ... end
-    LPH_JIT_MAX = function(...) return ... end
-    LPH_JIT_ULTRA = function(...) return ... end
-    LPH_NO_VIRTUALIZE = function(...) return ... end
-    LPH_NO_UPVALUES = function(f) return(function(...) return f(...) end) end
-    LPH_ENCSTR = function(...) return ... end
-    LPH_STRENC = function(...) return ... end
-    LPH_HOOK_FIX = function(...) return ... end
-    LPH_CRASH = function() return print(debug.traceback()) end
- end
  
  -- custom fonts
  local Fonts = {}
@@ -545,9 +532,8 @@ if not isfile("eclipse.wtf") then
                         do v.Visible = false 
                         end 
                     end
-                end)
-
-                LPH_NO_VIRTUALIZE(function()
+                end) 
+                
                 function library:Tween(...) TweenService:Create(...):Play() end
                     function library:addTab(name,image)
                         local newTab = tabholder.tab:Clone()
@@ -2400,9 +2386,8 @@ if not isfile("eclipse.wtf") then
                     end
 
                     function library:refreshConfigs()
-                        local tbl = {}
-                        for i,v in next, listfiles("eclipse.wtf") do table.insert(tbl,v) end
-                        library.options["config_box"].refresh(tbl)
-                    end      
-                end)()                         
+                    local tbl = {}
+                    for i,v in next, listfiles("eclipse.wtf") do table.insert(tbl,v) end
+                    library.options["config_box"].refresh(tbl)
+                end                          
                 return library
