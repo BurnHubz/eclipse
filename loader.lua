@@ -1,6 +1,7 @@
 writefile("ECLIPSE_KEY.txt", script_key)
 
 if game.CreatorId == 1154360 and game.PlaceId ~= 10228136016 then
+    repeat wait() until game:GetService("Players").LocalPlayer.Character
     pcall(function()
         script_key = readfile("ECLIPSE_KEY.txt")
         memorystats.cache("Gui")
