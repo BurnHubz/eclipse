@@ -65,8 +65,8 @@ if not isfile("eclipse.wtf") then
  --keybinds
  local Keybinds = CloneScreenGui
  local Background = Instance.new("Frame", Keybinds)
- local Gradient = Instance.new("TextLabel", Background)
- local KeybindGradient = Instance.new("UIGradient", Background)
+ local Gradient = Instance.new("Frame", Background)
+ local KeybindGradient = Instance.new("UIGradient", Gradient)
  local Tab = Instance.new("Frame", Background)
  local Name = Instance.new("TextLabel", Background)
  local Element = Instance.new("Frame", Background)
