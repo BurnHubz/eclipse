@@ -2319,7 +2319,7 @@ if not isfile("eclipse.wtf") then
                             end
                             return false
                         end
-
+                        
                         function library:createConfig()
                             makefolder("eclipse.wtf")
                             local name = library.flags["config_name"]
@@ -2342,11 +2342,13 @@ if not isfile("eclipse.wtf") then
                                     jig[i] = v
                                 end
                             end
-                            writefile("eclipse.wtf/" .. name .. ".cfg", game:GetService("HttpService"):JSONEncode(jig))
+                            pcall(function()
+                                writefile("eclipse.wtf/" .. name .. ".cfg", game:GetService("HttpService"):JSONEncode(jig))
+                            end)
                             library:Notify("Successfully created config " .. name .. ".cfg!", 5)
                             library:refreshConfigs()
                         end
-
+                        
                         function library:saveConfig()
                             makefolder("eclipse.wtf")
                             local name = library.flags["config_name"]
@@ -2367,11 +2369,13 @@ if not isfile("eclipse.wtf") then
                                     jig[i] = v
                                 end
                             end
-                            writefile(filePath, game:GetService("HttpService"):JSONEncode(jig))
+                            pcall(function()
+                                writefile(filePath, game:GetService("HttpService"):JSONEncode(jig))
+                            end)
                             library:Notify("Successfully updated config " .. name .. ".cfg!", 5)
                             library:refreshConfigs()
                         end
-
+                        
                         function library:loadConfig()
                             local name = library.flags["config_name"]
                             local filePath = "eclipse.wtf/" .. name .. ".cfg"
@@ -2417,18 +2421,22 @@ if not isfile("eclipse.wtf") then
                             end
                             library:Notify("Successfully loaded config " .. name .. ".cfg!", 5)
                         end
-
+                        
                         function library:deleteConfig()
-                            if isfile(library.flags["config_box"]) then delfile(library.flags["config_box"])
-                            library:refreshConfigs()
-                        end
+                        pcall(function()
+                            local filePath = "eclipse.wtf/" .. library.flags["config_name"] .. ".cfg"
+                            if isfile(filePath) then
+                                delfile(filePath)
+                                library:refreshConfigs()
+                            end
+                        end)
                     end
-
+                    
                     function library:refreshConfigs()
                         local tbl = {}
                         for i, v in next, listfiles("eclipse.wtf") do
                             table.insert(tbl, v)
                         end
                         library.options["config_box"].refresh(tbl)
-                    end
+                    end                        
                     return library
