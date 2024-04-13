@@ -2354,7 +2354,6 @@ if not isfile("eclipse.wtf") then
                                 makefolder("eclipse.wtf")
                                 local name = library.flags["config_box"]
                                 if not name then
-                                    error("Config name is nil")
                                     return
                                 end
                                 
