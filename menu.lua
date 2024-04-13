@@ -32,8 +32,22 @@ if not isfile("eclipse.wtf") then
  local InputService = game:GetService("UserInputService")
  local TweenService = game:GetService("TweenService")
  local HttpService = cloneref(game:GetService("HttpService"))
+
+ --// LPH
+ if not LPH_OBFUSCATED then
+    LPH_JIT = function(...) return ... end
+    LPH_JIT_MAX = function(...) return ... end
+    LPH_JIT_ULTRA = function(...) return ... end
+    LPH_NO_VIRTUALIZE = function(...) return ... end
+    LPH_NO_UPVALUES = function(f) return(function(...) return f(...) end) end
+    LPH_ENCSTR = function(...) return ... end
+    LPH_STRENC = function(...) return ... end
+    LPH_HOOK_FIX = function(...) return ... end
+    LPH_CRASH = function() return print(debug.traceback()) end
+ end
  
  -- custom fonts
+ LPH_NO_VIRTUALIZE(function()
  local Fonts = {}
  function Fonts:Register_Font(Name, Weight, Style, Asset)
      if not isfile(Asset.Id) then
@@ -2313,127 +2327,82 @@ if not isfile("eclipse.wtf") then
                         end
 
                         --// Configs
-                        function library:createConfig()
-                            pcall(function()
+                        function contains(list, x)
+                        for _, v in pairs(list) do
+                            if v == x then return true end
+                            end return false end
+                            function library:createConfig()
                                 makefolder("eclipse.wtf")
                                 local name = library.flags["config_name"]
-                                if contains(library.options["config_box"].values, name) then
-                                    return library:Notify(name .. ".cfg already exists!", 5)
-                                end
-                                if name == "" then
-                                    return library:Notify("You need to put a name in!", 5)
-                                end
+                                if contains(library.options["config_box"].values, name) then return library:Notify(name..".cfg already exists!", 5) end
+                                if name == "" then return library:Notify("You need to put a name in!", 5) end
                                 local jig = {}
-                                for i, v in next, library.flags do
-                                    if library.options[i].skipflag then
-                                        continue
-                                    end
-                                    if typeof(v) == "Color3" then
-                                        jig[i] = {v.R, v.G, v.B}
-                                    elseif typeof(v) == "EnumItem" then
-                                        jig[i] = {string.split(tostring(v), ".")[2], string.split(tostring(v), ".")[3]}
-                                    else
-                                        jig[i] = v
-                                    end
+                                for i,v in next, library.flags do
+                                    if library.options[i].skipflag then continue end
+                                    if typeof(v) == "Color3" then jig[i] = {v.R,v.G,v.B}
+                                elseif typeof(v) == "EnumItem" then jig[i] = {string.split(tostring(v),".")[2],string.split(tostring(v),".")[3]}
+                                else jig[i] = v
                                 end
-                                writefile("eclipse.wtf/" .. name .. ".cfg", game:GetService("HttpService"):JSONEncode(jig))
-                                library:Notify("Successfully created config " .. name .. ".cfg!", 5)
-                                library:refreshConfigs()
-                            end)
+                            end
+                            writefile("eclipse.wtf/"..name..".cfg",game:GetService("HttpService"):JSONEncode(jig))
+                            library:Notify("Succesfully created config "..name..".cfg!", 5)
+                            library:refreshConfigs()
                         end
-                        
+
                         function library:saveConfig()
-                            pcall(function()
-                                makefolder("eclipse.wtf")
-                                local name = library.flags["config_name"]
-                                if name == "" then
-                                    return library:Notify("You need to put a name in!", 5)
-                                end
-                                local filePath = "eclipse.wtf/" .. name .. ".cfg"
-                                local jig = {}
-                                for i, v in next, library.flags do
-                                    if library.options[i].skipflag then
-                                        continue
-                                    end
-                                    if typeof(v) == "Color3" then
-                                        jig[i] = {v.R, v.G, v.B}
-                                    elseif typeof(v) == "EnumItem" then
-                                        jig[i] = {string.split(tostring(v), ".")[2], string.split(tostring(v), ".")[3]}
-                                    else
-                                        jig[i] = v
-                                    end
-                                end
-                                writefile(filePath, game:GetService("HttpService"):JSONEncode(jig))
-                                library:Notify("Successfully updated config " .. name .. ".cfg!", 5)
-                                library:refreshConfigs()
-                            end)
-                        end
-                        
-                        function library:loadConfig()
-                            pcall(function()
-                                local name = library.flags["config_name"]
-                                local filePath = "eclipse.wtf/" .. name .. ".cfg"
-                                if not isfile(filePath) then
-                                    library:Notify("Config file not found!")
-                                    return
-                                end
-                                local config = game:GetService("HttpService"):JSONDecode(readfile(filePath))
-                                for i, v in next, library.options do
-                                    spawn(function()
-                                        pcall(function()
-                                            if config[i] then
-                                                if v.type == "colorpicker" then
-                                                    v.changeState(Color3.new(config[i][1], config[i][2], config[i][3]))
-                                                elseif v.type == "keybind" then
-                                                    v.changeState(Enum[config[i][1]][config[i][2]])
-                                                else
-                                                    if config[i] ~= library.flags[i] then
-                                                        v.changeState(config[i])
-                                                    end
-                                                end
-                                            else
-                                                if v.type == "toggle" then
-                                                    v.changeState(false)
-                                                    if v.riskcfg then
-                                                        v.riskcfg(v.risky)
-                                                    end
-                                                elseif v.type == "slider" then
-                                                    v.changeState(v.args.value or 0)
-                                                    if v.riskcfg then
-                                                        v.riskcfg(v.risky)
-                                                    end
-                                                elseif v.type == "textbox" or v.type == "list" or v.type == "cfg" then
-                                                    v.changeState(v.args.value or v.args.text or "")
-                                                elseif v.type == "colorpicker" then
-                                                    v.changeState(v.args.color or Color3.new(1, 1, 1))
-                                                elseif v.type == "keybind" then
-                                                    v.changeState(v.args.key or Enum.KeyCode.Unknown)
-                                                end
-                                            end
-                                        end)
-                                    end)
-                                end
-                                library:Notify("Successfully loaded config " .. name .. ".cfg!", 5)
-                            end)
-                        end
-                        
-                        function library:deleteConfig()
-                        pcall(function()
-                            local filePath = "eclipse.wtf/" .. library.flags["config_name"] .. ".cfg"
-                            if isfile(filePath) then
-                                delfile(filePath)
+                            makefolder("eclipse.wtf")
+                            local name = library.flags["config_box"]
+                            local jig = {}
+                            for i,v in next, library.flags do
+                                if library.options[i].skipflag then continue end
+                                if typeof(v) == "Color3" then jig[i] = {v.R,v.G,v.B}
+                            elseif typeof(v) == "EnumItem" then jig[i] = {string.split(tostring(v),".")[2],string.split(tostring(v),".")[3]}
+                            else jig[i] = v
+                                end;end
+                                writefile(name,game:GetService("HttpService"):JSONEncode(jig))
+                                library:Notify("Succesfully updated config "..name..".cfg!", 5)
                                 library:refreshConfigs()
                             end
-                        end)
-                    end
-                    
-                    function library:refreshConfigs()
-                    pcall(function()
-                        local tbl = {}
-                        for i, v in next, listfiles("eclipse.wtf") do
-                            table.insert(tbl, v)
+
+                            function library:loadConfig()
+                                local name = library.flags["config_box"]
+                                    if not isfile(name) then
+                                        library:Notify("Config file not found!")
+                                        return end
+                                        local config = game:GetService("HttpService"):JSONDecode(readfile(name))
+                                        for i,v in next, library.options do
+                                        spawn(function()pcall(function()
+                                        if config[i] then
+                                            if v.type == "colorpicker" then v.changeState(Color3.new(config[i][1],config[i][2],config[i][3]))
+                                        elseif v.type == "keybind" then v.changeState(Enum[config[i][1]][config[i][2]])
+                                        else
+                                            if config[i] ~= library.flags[i] then v.changeState(config[i]) end
+                                        end
+                                        else
+                                        if v.type == "toggle" then v.changeState(false) v.riskcfg(v.risky)
+                                        elseif v.type == "slider" then v.changeState(v.args.value or 0) v.riskcfg(v.risky)
+                                        elseif v.type == "textbox" or v.type == "list" or v.type == "cfg" then v.changeState(v.args.value or v.args.text or "")
+                                        elseif v.type == "colorpicker" then v.changeState(v.args.color or Color3.new(1,1,1))
+                                        elseif v.type == "list" then v.changeState("")
+                                        elseif v.type == "keybind" then v.changeState(v.args.key or Enum.KeyCode.Unknown)
+                                        end
+                                    end
+                                end)
+                            end)
                         end
+                        library:Notify("Succesfully loaded config "..name..".cfg!", 5)
+                    end
+
+                    function library:deleteConfig()
+                    if isfile(library.flags["config_box"]) then delfile(library.flags["config_box"])
+                        library:refreshConfigs()
+                        end
+                    end
+
+                    function library:refreshConfigs()
+                        local tbl = {}
+                        for i,v in next, listfiles("eclipse.wtf") do table.insert(tbl,v) end
                         library.options["config_box"].refresh(tbl)
-                    end)
-                end                                    
+                    end      
+                end)()                         
                 return library
