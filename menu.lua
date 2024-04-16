@@ -372,7 +372,6 @@ if not isfile("eclipse.wtf") then
 
     local menu_bg_glow = Instance.new("ImageLabel", menu.bg)
     menu_bg_glow.Name = "Glow_Around"
-    menu_bg_glow.RichText = true
     menu_bg_glow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     menu_bg_glow.BackgroundTransparency = 1.000
     menu_bg_glow.Position = UDim2.new(-0.061, 0, -0.148, 0)
