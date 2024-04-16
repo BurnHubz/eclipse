@@ -12,7 +12,7 @@ if not isfile("eclipse.wtf") then
     makefolder("eclipse.wtf")
  end
  
- local menu = game:GetObjects("rbxassetid://17072589594")[1] 
+ local menu = game:GetObjects("rbxassetid://17171194056")[1] 
  local tabholder = menu.bg.bg.bg.bg.bg.bg.main.group;
  local tabviewer = menu.bg.bg.bg.bg.bg.bg.tabbuttons;
  for _, obj in pairs(menu:GetDescendants()) do
@@ -369,15 +369,6 @@ if not isfile("eclipse.wtf") then
     menu_text_label.TextColor3 = Color3.fromRGB(74, 74, 74)
     menu_text_label.TextSize = 9
     menu_text_label.TextStrokeTransparency = 0.000
-
-    local menu_bg_glow = Instance.new("ImageLabel", menu.bg)
-    menu_bg_glow.Name = "Glow_Around"
-    menu_bg_glow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    menu_bg_glow.BackgroundTransparency = 1.000
-    menu_bg_glow.Position = UDim2.new(-0.061, 0, -0.148, 0)
-    menu_bg_glow.Size = UDim2.new(0, 900, 0, 582)
-    menu_bg_glow.ImageColor3 = library.Colors.libColor
-    menu_bg_glow.Image = crypt.base64.decode("iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAQAAABh3xcBAAAJK0lEQVR42u3caXLj1hmG0RcDNbl3kV1k/+VdeBd2SxwA5AdGssVJDknFOYfVsEqS+YNVj76LC5AJAAAAAAAAAAAA/JMUn32zu+x3Cy8f3FV3SaqfhVlf/KegmI6F0OGhoXfDv2LvO1+e6PtxF8Mj01HwcP/Ax2M3Bd8tf+vaiX4YeJFycRxzFzrcJ/Q58XZx7KafFsfnen0m8znx8VEMx3m+Sx3uk3k3BN4Ox3b4evwTcDT10xN9GXmVKlXKVIvk59SB28Y+R96mTZM2TZo0KdKmPXemXp88d+8zr1KmTpV6OFZT7MXB2Tpwm4m+zLxJk12a7LJLmV2KJG0Ot+cuXrqPmVepUmeVVVapsxpSr6bUhQ73CL2dpvgu2+yyTZltkiZJ0qY4PtPPLd37RfsqqzwNjz73epG60OH2oc+zfJdtttmkmkZtP++/uBnXZ16nzipPec5LnvOc5yn2cQEP3Nq4aB8jX6dONYzY7nzqp87Rx4X7mPlbXvOSlzznKU/DVO9DN9HhthN9zHyXTTZZ5yOrVNPPu2Ef/spz9CLzRlw/z1/ylrf8lre85nWR+rh4B26Zept2kfl7nlJP83zciS9SHJvqp5bu5SL057zmt/zIj0Xq4/I9ZjrcdJ5nWraPma9SJumGzbn+UU6X2a5YuheL1Mel+48p9Zc8D5tyrqTD7WPvhk24dT6mzNtp971aXO7+0uW18cLac17ymrf8yL+na+nV4ko6cNvQu8XFtSa/p802m2yyySrbVKdbPLUZV/6yeH/NW6r8y+sOD/VH3rLNZpjuyytgxXWhL6+i76dee5Xhweq87mW+vH3tU+WZpftypvdn6pVXGR6smi5zz/O8+FrofezzTK+H1IUOjw99eTdLdf4yd3limhcHy/d+W07o8PjQf70VvTj1ftLy5Dzff5tqPdwiAzxWOdRYXfqW8XNL9/2Pnaimu3GAxykWkV/0yRDl2SfcT91Vc/gOoRfXfQDM6V33w+9E6PBNQv/sA9i/vOsenyID3zj4Cwstr35a4LtEfjF76PB/QOggdEDogNABoQNCB4QOCB0QOggdEDogdEDogNABoQNCB4QOQgeEDggdEDogdEDogNABoYPQvQQgdEDogNABoQNCB4QOCB0QOggdEDogdEDogNABoQNCB4QOQgeEDggdEDogdEDogNABoYPQAaEDQgeEDggdEDogdEDogNBB6IDQAaEDQgeEDggdEDogdBA6IHRA6IDQAaEDQgeEDggdhA4IHRA6IHRA6IDQAaEDQgeEDkIHhA4IHRA6IHRA6IDQAaGD0AGhA0IHhA4IHRA6IHRA6CB0QOiA0AGhA0IHhA4IHRA6IHQQOiB0QOiA0AGhA0IHhA4IHYQOCB0QOiB0QOiA0AGhA0IHoQNCB4QOCB0QOiB0QOiA0AGhg9ABoQNCB4QOCB0QOiB0QOggdEDogNABoQNCB4QOCB0QOggdEDogdEDogNABoQNCB4QOCB2EDggdEDogdEDogNABoQNCB6EDQgeEDggdEDogdEDogNBB6IDQAaEDQgeEDggdEDogdEDoIHRA6IDQAaEDQgeEDggdEDoIHRA6IHRA6IDQAaEDQgeEDkIHhA4IHRA6IHRA6IDQAaEDQgehA0IHhA4IHRA6IHRA6IDQQeiA0AGhA0IHhA4IHRA6IHQQOiB0QOiA0AGhA0IHhA4IHRA6CB0QOiB0QOiA0AGhA0IHhA5CB4QOCB0QOiB0QOiA0AGhg9ABoQNCB4QOCB0QOiB0QOiA0EHogNABoQNCB4QOCB0QOiB0EDogdEDogNABoQNCB4QOCB2EDggdEDogdEDogNABoQNCB6F7CUDogNABoQNCB4QOCB0QOiB0EDogdEDogNABoQNCB4QOCB2EDggdEDogdEDogNABoQNCB6EDQgeEDggdEDogdEDogNABoYPQAaEDQgeEDggdEDogdEDoIHRA6IDQAaEDQgeEDggdEDoIHRA6IHRA6IDQAaEDQgeEDggdhA4IHRA6IHRA6IDQAaEDQgehA0IHhA4IHRA6IHRA6IDQQeiA0AGhA0IHhA4IHRA6IHRA6CB0QOiA0AGhA0IHhA4IHRA6CB0QOiB0QOiA0AGhA0IHhA5CB4QOCB0QOiB0QOiA0AGhA0IHoQNCB4QOCB0QOiB0QOiA0EHogNABoQNCB4QOCB0QOiB0EDogdEDogNABoQNCB4QOCB0QOggdEDogdEDogNABoQNCB4QOQgeEDggd+N8PvfOCwTfR/fdC75J06Yb/At8v9osKLU88RXfkSYFHB/5Z2ifqLC94wi5d2uEhdPgeoS+bPNtleVXmTXZCh28Q+i7NNamXF2feZJdddmm9yvBg7VBjc2nq5cnEx8ybIfNttmm8yvBgTbbZDqk3e6kfyf3c0n2Z+SabrIUO3yD0dTbZHKT+paX7cp7vsh0y/xA6fIPQP4bUt9MC/uTivT4Z+jzPt9lknfc8ZedVhgfb5T3vWU+hN+euidVHM89iE27OfJUmf6ROlSpVyhQpUnjd4abG9XUzDN4mPw9S72s9ettMfeapm2ELbp2PPGWVMr/nLa95yXNWqVMLHe4Ser8dvs5H3vMzf+Zn3vOR9bAt13xt6b5/hr5JnVXqlEnabLMZsq9TDWf5YodbRZ7kYG09pt6fqV9wln5qos8L936hXuxl/pQ6dcqUIoebx94O1843i9T/+mXxfuVE71JM5wS7RcxddnuZVylTmudw85k+37Q2Xv/ql/Afi9BPvLnl+NK9GEIvs51CbrLNJk9ZTcv20jva4Q6WW+P9An6d9bB03w777ifew3bu8lqR3TSxu+F8fTVM82qa9SY63Hai/3qP6mZ4bIdb09uvXUefU2+mr5tsh1k+Zy50uEfoc+r9XO9z379hJteHPv4VWX7dpBq25sopc6HDfUKf32DWX0vfDcd2OkP/wuW1YtoEWP41KafIx8xFDveI/fAt4+N03/+kiKvP0ef/pV3cl1Om2Iu8z1zscNuJnoN3lM7Jt6fft5bjiXbzz/p/46NcHCNzuHvq4/p6Pi4/M647FuSp0LMIeRl8Ds7MhQ73CH35uY2fBL6c0NeFnl9yFjh8l+APv5O/E/rx3xU6PCb0k6kKEwAAAAAAAAAAgH++/wDlSQfnuCgsAwAAAABJRU5ErkJggg==")
 
     local BottomBar = Instance.new("Frame", menu.bg)
     local BuildLabel = Instance.new("TextLabel", BottomBar)
