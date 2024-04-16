@@ -599,6 +599,8 @@ if not isfile("eclipse.wtf") then
                         local UIListLayout = Instance.new("UIListLayout")
                         local UIPadding = Instance.new("UIPadding")
                         local element = Instance.new("Frame")
+                        local element2 = Instance.new("UIGradient")
+                        local element3 = Instance.new("UIGradient")
                         local title = Instance.new("TextLabel")
 
                         groupCount -= 1
@@ -621,6 +623,20 @@ if not isfile("eclipse.wtf") then
                         UIPadding.Parent = grouper
                         UIPadding.PaddingBottom = UDim.new(0, 4)
                         UIPadding.PaddingTop = UDim.new(0, 7)
+
+                        element.Name = "element"
+                        element.Parent = groupbox
+                        element.BackgroundColor3 = library.libColor
+                        element.BorderSizePixel = 0
+                        element.Size = UDim2.new(1, 0, 0, 1)
+  
+                        element2.Name = "element2"
+                        element2.Parent = element
+                        element2.Color = ColorSequence.new({ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)),ColorSequenceKeypoint.new(0.05, library.Colors.libColor),ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))})
+  
+                        element3.Name = "element3"
+                        element3.Parent = groupbox
+                        element3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, library.Colors.libColor), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
 
                         title.Parent = groupbox
                         title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
