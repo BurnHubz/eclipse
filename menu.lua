@@ -802,63 +802,30 @@ if not isfile("eclipse.wtf") then
 
                                 local status = false
                                 local Toggle = false
-                                
                                 function updateValue(val)
                                     if library.colorpicking then return end
-                                    library.flags[args.flag] = val
-                                    if val.Name == "Unknown" or val.Name == "Unknown" then
+                                        library.flags[args.flag] = val
+                                        if val.Name == "Unknown" or val.Name == "Unknown" then
                                         button.Text = "None"
-                                    else
-                                        local keyName = val.Name
-                                        if keyName == "MouseButton2" then
-                                            button.Text = "MB2"
                                         else
-                                            button.Text = keynames[val] or keyName
-                                        end
+                                        button.Text = keynames[val] or ""..val.Name..""
                                     end
                                 end
-                                
                                 InputService.InputBegan:Connect(function(input)
-                                    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                                        return  
-                                    end
+                                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                                    return  
+                                end
                                     
-                                    local key = input.KeyCode == Enum.KeyCode.Unknown and input.UserInputType or input.KeyCode
-                                    if next then
-                                        if not table.find(library.blacklisted,key) then
-                                            next = false
-                                            library.flags[args.flag] = key
-                                            if key.Name == "Unknown" or key.Name == "Unknown" then
-                                                button.Text = "None"
-                                            else
-                                                local keyName = key.Name
-                                                if keyName == "MouseButton2" then
-                                                    button.Text = "MB2"
-                                                else
-                                                    button.Text = keynames[key] or ""..keyName..""
-                                                end
-                                                if args.gui then
-                                                    Name.Visible = true
-                                                    if args.type == "hold" then
-                                                        Name.Text = "<font color=\"rgb(255,255,255)\">" ..args.text.. ":</font>".." <font color=\"rgb(105, 100, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
-                                                    else
-                                                        if not Toggle then
-                                                            Toggle = true
-                                                            Name.Text = "<font color=\"rgb(255,255,255)\">" ..args.text.. ":</font>".." <font color=\"rgb(105, 100, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
-                                                        else
-                                                            Toggle = false
-                                                            Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ":</font>".." <font color=\"rgb(255,255,255)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
-                                                        end
-                                                    end
-                                                end
-                                            end
-                                            button.TextColor3 = Color3.fromRGB(155, 155, 155)
-                                        end
-                                    end
-                                    if not next and key == library.flags[args.flag] and args.callback then
-                                        status = not status
-                                        args.callback(key, status)
-                                        local keyName = key.Name
+                                local key = input.KeyCode == Enum.KeyCode.Unknown and input.UserInputType or input.KeyCode
+                                if next then
+                                    if not table.find(library.blacklisted,key) then
+                                    next = false
+                                    library.flags[args.flag] = key
+                                    if key.Name == "Unknown" or key.Name == "Unknown" then
+                                        button.Text = "None"
+                                    else
+                                        button.Text = keynames[key] or ""..key.Name..""
+                                        local keyName = tostring(library.flags[args.flag]):split(".")[3] -- Extracts the key name from the enum value
                                         if args.gui then
                                             Name.Visible = true
                                             if args.type == "hold" then
@@ -869,13 +836,35 @@ if not isfile("eclipse.wtf") then
                                                     Name.Text = "<font color=\"rgb(255,255,255)\">" ..args.text.. ":</font>".." <font color=\"rgb(105, 100, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
                                                 else
                                                     Toggle = false
-                                                    Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ":</font>".." <font color=\"rgb(255,255,255)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                                    Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ": /font>".." <font color=\"rgb(105, 100, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
                                                 end
                                             end
                                         end
                                     end
+                                    button.TextColor3 = Color3.fromRGB(155, 155, 155)
+                                    end
+                                end
+                                if not next and key == library.flags[args.flag] and args.callback then
+                                    status = not status
+                                    args.callback(key, status)
+                                    local keyName = tostring(library.flags[args.flag]):split(".")[3] -- Extracts the key name from the enum value
+                                    if args.gui then
+                                        Name.Visible = true
+                                        if args.type == "hold" then
+                                            Name.Text = "<font color=\"rgb(255,255,255)\">" ..args.text.. ":</font>".." <font color=\"rgb(105, 100, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                        else
+                                            if not Toggle then
+                                                Toggle = true
+                                                Name.Text = "<font color=\"rgb(255,255,255)\">" ..args.text.. ":</font>".." <font color=\"rgb(105, 100, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                            else
+                                                Toggle = false
+                                                Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ":</font>".." <font color=\"rgb(105, 100, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                            end
+                                        end
+                                    end
+                                end
                                 end)
-                                
+
                                 if args.type == "hold" then
                                     InputService.InputEnded:Connect(function(input)
                                         if input.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -883,59 +872,55 @@ if not isfile("eclipse.wtf") then
                                         end
                                         local key = input.KeyCode == Enum.KeyCode.Unknown and input.UserInputType or input.KeyCode
                                         if next then
-                                            if not table.find(library.blacklisted,key) then
-                                                next = false
-                                                library.flags[args.flag] = key
-                                                if key.Name == "Unknown" or key.Name == "Unknown" then
-                                                    button.Text = "None"
-                                                else
-                                                    local keyName = key.Name
-                                                    if keyName == "MouseButton2" then
-                                                        button.Text = "MB2"
-                                                    else
-                                                        button.Text = keynames[key] or ""..keyName..""
-                                                    end
-                                                    if args.gui then
-                                                        Name.Visible = true
-                                                        if args.type == "hold" then
-                                                            Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ":</font>".." <font color=\"rgb(105, 100, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
-                                                        else
-                                                            Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ":</font>".." <font color=\"rgb(105, 100, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
-                                                        end
-                                                    end
-                                                end
-                                            end
-                                            if not next and key == library.flags[args.flag] and args.callback then
-                                                status = not status
-                                                args.callback(key, status)
-                                                local keyName = key.Name
+                                        if not table.find(library.blacklisted,key) then
+                                            next = false
+                                            library.flags[args.flag] = key
+                                            if key.Name == "Unknown" or key.Name == "Unknown" then
+                                                button.Text = "None"
+                                            else
+                                                button.Text = keynames[key] or ""..key.Name..""
+                                                local keyName = tostring(library.flags[args.flag]):split(".")[3] -- Extracts the key name from the enum value
                                                 if args.gui then
                                                     Name.Visible = true
-                                                    Name.Text = args.text..": <font color=\"rgb(125, 125, 125)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                                    if args.type == "hold" then
+                                                        Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ":</font>".." <font color=\"rgb(105, 100, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                                    else
+                                                        Name.Text = "<font color=\"rgb(125, 125, 125)\">" ..args.text.. ":</font>".." <font color=\"rgb(105, 100, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                                    end
                                                 end
                                             end
                                         end
+                                        end
+                                        if not next and key == library.flags[args.flag] and args.callback then
+                                        status = not status
+                                        args.callback(key, status)
+                                        local keyName = tostring(library.flags[args.flag]):split(".")[3] -- Extracts the key name from the enum value
+                                        if args.gui then
+                                            Name.Visible = true
+                                            Name.Text = args.text..": <font color=\"rgb(125, 125, 125)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
+                                        end
+                                        end
                                     end)
                                 end
-                                
+
                                 button.MouseButton1Click:Connect(function()
-                                    if library.colorpicking then return end
-                                    library.flags[args.flag] = Enum.KeyCode.Unknown
-                                    button.Text = "--"
-                                    button.TextColor3 = library.Colors.libColor
-                                    next = true
+                                if library.colorpicking then return end
+                                library.flags[args.flag] = Enum.KeyCode.Unknown
+                                button.Text = "--"
+                                button.TextColor3 = library.Colors.libColor
+                                next = true
                                 end)
-                                
+
                                 library.flags[args.flag] = Enum.KeyCode.Unknown
                                 library.options[args.flag] = {type = "keybind",changeState = updateValue,skipflag = args.skipflag,oldargs = args}
-                                
-                                local keyName = tostring(args.key):split(".")[3]
+
+                                local keyName = tostring(args.key):split(".")[3] -- Extracts the key name from the enum value
                                 if args.gui then
                                     Name.Visible = true
                                     Name.Text = args.text..": <font color=\"rgb(105, 100, 210)\">" .."["..keyName.."]".. "</font> ("..args.type..")"
                                 end
-                                
-                                updateValue(args.key or Enum.KeyCode.Unknown)                                
+
+                                updateValue(args.key or Enum.KeyCode.Unknown)
                             end
                             function toggle:addColorpicker(args)
                                 if not args.flag and args.text then args.flag = args.text end
