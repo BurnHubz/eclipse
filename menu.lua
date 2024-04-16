@@ -346,7 +346,6 @@ if not isfile("eclipse.wtf") then
        [Enum.UserInputType.MouseButton2] = 'MB2',
        [Enum.UserInputType.MouseButton3] = 'MB3'
     }
-    [Enum.KeyCode.Button2] = "MB2"
     menu.bg.Position = UDim2.new(0.5,-menu.bg.Size.X.Offset/2,0.5,-menu.bg.Size.Y.Offset/2)
     menu.Parent = CloneCore
     menu.Name = "eclipse_gui"
