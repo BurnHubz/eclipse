@@ -626,7 +626,7 @@ if not isfile("eclipse.wtf") then
 
                         element.Name = "element"
                         element.Parent = groupbox
-                        element.BackgroundColor3 = library.libColor
+                        element.BackgroundColor3 = library.Colors.libColor
                         element.BorderSizePixel = 0
                         element.Size = UDim2.new(1, 0, 0, 1)
   
