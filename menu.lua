@@ -342,10 +342,11 @@ if not isfile("eclipse.wtf") then
        [Enum.KeyCode.Slash] = '/',
        [Enum.KeyCode.BackSlash] = '\\',
        [Enum.KeyCode.Question] = '?',
-       [Enum.UserInputType.MouseButton1] = "MB1",
-       [Enum.UserInputType.MouseButton2] = "MB2",
-       [Enum.UserInputType.MouseButton3] = "MB3"
+       [Enum.UserInputType.MouseButton1] = 'MB1',
+       [Enum.UserInputType.MouseButton2] = 'MB2',
+       [Enum.UserInputType.MouseButton3] = 'MB3'
     }
+    [Enum.KeyCode.Button2] = "MB2"
     menu.bg.Position = UDim2.new(0.5,-menu.bg.Size.X.Offset/2,0.5,-menu.bg.Size.Y.Offset/2)
     menu.Parent = CloneCore
     menu.Name = "eclipse_gui"
@@ -808,18 +809,12 @@ if not isfile("eclipse.wtf") then
                                         button.Text = "None"
                                     else
                                         local keyName = keynames[val]
-                                        if keyName == nil then
-                                            if val.KeyCode == Enum.KeyCode.MouseButton1 then
-                                                keyName = "MB1"
-                                            elseif val.KeyCode == Enum.KeyCode.MouseButton3 then
-                                                keyName = "MB3"
-                                            elseif val.KeyCode == Enum.KeyCode.MouseButton2 then
-                                                keyName = "MB2"
-                                            end
+                                        if keyName == nil and val.KeyCode == Enum.KeyCode.MouseButton2 then
+                                            keyName = "MB2"
                                         end
                                         button.Text = keyName or ""..val.Name..""
                                     end
-                                end                                                         
+                                end 
                                 InputService.InputBegan:Connect(function(input)
                                 if input.UserInputType == Enum.UserInputType.MouseButton1 then
                                     return  
