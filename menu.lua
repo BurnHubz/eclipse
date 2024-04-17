@@ -638,7 +638,7 @@ if not isfile("eclipse.wtf") then
                         })
                         element2.Transparency = NumberSequence.new{
                             NumberSequenceKeypoint.new(0),
-                            NumberSequenceKeypoint.new(1, 1.5) 
+                            NumberSequenceKeypoint.new(1, 0.2) 
                         }                        
 
                         title.Parent = groupbox
