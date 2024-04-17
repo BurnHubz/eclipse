@@ -625,7 +625,7 @@ if not isfile("eclipse.wtf") then
 
                         element.Name = "element_frame"
                         element.Parent = groupbox
-                        element.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                        element.BackgroundColor3 = Color3.fromRGB(210, 210, 210)
                         element.BorderSizePixel = 0
                         element.Size = UDim2.new(1, 0, 0, 1)
   
@@ -635,11 +635,7 @@ if not isfile("eclipse.wtf") then
                             ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)),
                             ColorSequenceKeypoint.new(0.05, library.Colors.libColor),
                             ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))
-                        })
-                        element2.Transparency = NumberSequence.new{
-                            NumberSequenceKeypoint.new(0),
-                            NumberSequenceKeypoint.new(1, 0.2) 
-                        }                        
+                        })                  
 
                         title.Parent = groupbox
                         title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
