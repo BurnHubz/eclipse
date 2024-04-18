@@ -58,7 +58,7 @@ do
             local Cursor = Drawing.new('Triangle');Cursor.Thickness = 1;Cursor.Filled = true;Cursor.Visible = true;Cursor.ZIndex = math.huge;local CursorOutline = Drawing.new('Triangle');CursorOutline.Thickness = 1;CursorOutline.Filled = false;CursorOutline.Color = Color3.new(0, 0, 0);CursorOutline.Visible = true;CursorOutline.ZIndex = math.huge
             function Cursor_Update()
                 local Mouse_Position = UserInputService:GetMouseLocation();
-                Cursor.Color = Color3.fromRGB(105, 100, 210)
+                Cursor.Color = Color3.fromRGB(115, 100, 215)
                 Cursor.PointA = Vector2.new(Mouse_Position.X, Mouse_Position.Y);Cursor.PointB = Vector2.new(Mouse_Position.X + 16, Mouse_Position.Y + 6);Cursor.PointC = Vector2.new(Mouse_Position.X + 6, Mouse_Position.Y + 16) CursorOutline.PointA = Cursor.PointA;CursorOutline.PointB = Cursor.PointB;CursorOutline.PointC = Cursor.PointC
                 RunService.RenderStepped:Wait()
             end 
@@ -74,7 +74,7 @@ do
                 Position = UDim2.new(0.5, 0, 0.5, 0),
                 Size = UDim2.new(0, 336, 0, 390),
                 Image = "http://www.roblox.com/asset/?id=4996891970",
-                ImageColor3 = Color3.fromRGB(105, 100, 210),
+                ImageColor3 = Color3.fromRGB(115, 100, 215),
                 ScaleType = Enum.ScaleType.Stretch
             })
 
@@ -100,7 +100,7 @@ do
                 Parent = Background,
                 BackgroundTransparency = 1,
                 BorderSizePixel = 0,
-                ScrollBarImageColor3 = Color3.fromRGB(105, 100, 210),
+                ScrollBarImageColor3 = Color3.fromRGB(115, 100, 215),
                 Position = UDim2.new(0, 0, 0.130, 0),
                 Size = UDim2.new(0, 295, 0, 225),
                 BottomImage = "",
@@ -126,7 +126,7 @@ do
                 FontFace = Fonts.ProggyTiny,
                 RichText = true,
                 Text = table.concat({
-                    "Game name: <font color=\"rgb(105, 100, 210)\">"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name.."</font>\n\n",
+                    "Game name: <font color=\"rgb(115, 100, 215)\">"..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name.."</font>\n\n",
                     "Game has updated: [<font color=\"" .. (Game_Version and "rgb(0, 255, 0)" or "rgb(255, 0, 0)") .. "\">" .. Game_Version_Text .. "</font>]\n\n",
                     "[<font color=\"rgb(0, 255, 0)\">+</font>] Added silent aim\n\n",
                     "[<font color=\"rgb(0, 255, 0)\">+</font>] Added weapon icons\n\n",
@@ -150,7 +150,6 @@ do
                 Parent = Background,
                 BackgroundColor3 = Color3.fromRGB(11, 11, 11),
                 BorderColor3 = Color3.fromRGB(22, 22, 22),
-
                 BorderMode = Enum.BorderMode.Inset,
                 Position = UDim2.new(0.5, 0, 0, 14),
                 Size = UDim2.new(0, 300, 0, 30)
@@ -166,13 +165,11 @@ do
             local TitleLabel = instance.new("TextLabel", {
                 Parent = TopBar,
                 BackgroundTransparency = 1,
-                
                 Position = UDim2.new(0, 0, 0, 0),
                 Size = UDim2.new(0, 298, 0, 29),
                 TextColor3 = Color3.fromRGB(75, 75, 75),
-
                 RichText = true,
-                Text = "eclipse.<font color=\"rgb(105, 100, 210)\">wtf</font>",
+                Text = "eclipse.<font color=\"rgb(115, 100, 215)\">wtf</font>",
                 FontFace = Fonts.ProggyTiny,
                 TextSize = 9
             })
@@ -242,7 +239,7 @@ do
 
                 InjectButton.MouseEnter:Connect(function()
                     local tweenInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
-                    local tweenProperties = { Color = Color3.fromRGB(105, 100, 210) }
+                    local tweenProperties = { Color = Color3.fromRGB(115, 100, 215) }
                     local tween = Tween:Create(UIStroke, tweenInfo, tweenProperties)
                     tween:Play()
                 end)
@@ -292,3 +289,4 @@ do
     end
 end
 return Loader
+--Loader:Initialize()
