@@ -1688,7 +1688,7 @@ local library = {
                            holder.BackgroundColor3 = Color3.fromRGB(11, 11, 11)
                            holder.BorderColor3 = Color3.fromRGB(0, 0, 0)
                            holder.Size = UDim2.new(1, 0, 1, 0)
-                           holder.ScrollBarThickness = 1
+                           holder.ScrollBarThickness = 1.5
 
                            UIListLayout.Parent = holder
                            UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
