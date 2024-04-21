@@ -2395,23 +2395,25 @@ local library = {
                            local name = library.flags["config_box"]
                                if not isfile(name) then
                                    library:Notify("Config file not found!")
-                                   return end
-                                   local config = game:GetService("HttpService"):JSONDecode(readfile(name))
+                                   return 
+                                end
+                                local config = game:GetService("HttpService"):JSONDecode(readfile(name))
                                    for i,v in next, library.options do
-                                   spawn(function()pcall(function()
-                                   if config[i] then
-                                       if v.type == "colorpicker" then v.changeState(Color3.new(config[i][1],config[i][2],config[i][3]))
-                                   elseif v.type == "keybind" then v.changeState(Enum[config[i][1]][config[i][2]])
-                                   else
-                                       if config[i] ~= library.flags[i] then v.changeState(config[i]) end
-                                   end
-                                   else
-                                   if v.type == "toggle" then v.changeState(false) v.riskcfg(v.risky)
-                                   elseif v.type == "slider" then v.changeState(v.args.value or 0) v.riskcfg(v.risky)
-                                   elseif v.type == "textbox" or v.type == "list" or v.type == "cfg" then v.changeState(v.args.value or v.args.text or "")
-                                   elseif v.type == "colorpicker" then v.changeState(v.args.color or Color3.new(1,1,1))
-                                   elseif v.type == "list" then v.changeState("")
-                                   elseif v.type == "keybind" then v.changeState(v.args.key or Enum.KeyCode.Unknown)
+                                    spawn(function()
+                                        pcall(function()
+                                        if config[i] then
+                                            if v.type == "colorpicker" then v.changeState(Color3.new(config[i][1],config[i][2],config[i][3]))
+                                        elseif v.type == "keybind" then v.changeState(Enum[config[i][1]][config[i][2]])
+                                        else
+                                            if config[i] ~= library.flags[i] then v.changeState(config[i]) end
+                                        end
+                                        else
+                                        if v.type == "toggle" then v.changeState(false) v.riskcfg(v.risky)
+                                        elseif v.type == "slider" then v.changeState(v.args.value or 0) v.riskcfg(v.risky)
+                                        elseif v.type == "textbox" or v.type == "list" or v.type == "cfg" then v.changeState(v.args.value or v.args.text or "")
+                                        elseif v.type == "colorpicker" then v.changeState(v.args.color or Color3.new(1,1,1))
+                                        elseif v.type == "list" then v.changeState("")
+                                        elseif v.type == "keybind" then v.changeState(v.args.key or Enum.KeyCode.Unknown)
                                    end
                                end
                            end)
