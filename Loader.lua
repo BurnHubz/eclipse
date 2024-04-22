@@ -116,7 +116,7 @@ do
                 })
             end
 
-            local Game_Version = (game.PlaceVersion == 17437)
+            local Game_Version = (game.PlaceVersion == 17438)
             local Game_Version_Text = (Game_Version and "<font color=\"rgb(0, 255, 0)\">false</font>" or "<font color=\"rgb(255, 0, 0)\">true</font>")
 
             local UpdateLabel = instance.new("TextLabel", {
