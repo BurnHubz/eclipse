@@ -966,7 +966,7 @@ local library = {
                                colorpicker.BorderColor3 = Color3.fromRGB(0, 0, 0)
                                colorpicker.BorderSizePixel = 3
                                colorpicker.Position = args.second and UDim2.new(0.720000029, 4, 0.272000015, 0) or UDim2.new(0.860000014, 4, 0.272000015, 0)
-                               colorpicker.Size = UDim2.new(0, 20, 0, 10)
+                               colorpicker.Size = UDim2.new(0, 15, 0, 10)
 
                                mid.Name = "mid"
                                mid.Parent = colorpicker
