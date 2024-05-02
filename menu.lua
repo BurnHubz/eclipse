@@ -1028,7 +1028,7 @@ repeat
  
                                 picker.Name = "picker"
                                 picker.Parent = main
-                                picker.BackgroundColor3 = Color3.fromRGB(115, 100, 215)
+                                picker.BackgroundColor3 = library.Colors.libColor
                                 picker.BorderColor3 = Color3.fromRGB(0, 0, 0)
                                 picker.BorderSizePixel = 0
                                 picker.Size = UDim2.new(1, 0, 1, 0)
@@ -1042,27 +1042,7 @@ repeat
                                 pickerframe.BorderSizePixel = 2
                                 pickerframe.Position = UDim2.new(0.801000025, 14, -0.0559999987, 13)
                                 pickerframe.Size = UDim2.new(0, 20, 0.25, 110)
- 
-                                CurrentColorFrame.Name = "CurrentColorFrame"
-                                CurrentColorFrame.Parent = colorFrame
-                                CurrentColorFrame.BackgroundColor3 = Color3.fromRGB(15,15,15)
-                                CurrentColorFrame.BorderColor3 = Color3.fromRGB(15,15,15)
-                                CurrentColorFrame.BorderSizePixel = 2
-                                CurrentColorFrame.Position = UDim2.new(0.98, 0, 0.915, 0)
-                                CurrentColorFrame.Size = UDim2.new(-0.965, 0, 0, 12)
- 
-                                CurrentColorFrame_Text.Name = "CurrentColorFrame_Text"
-                                CurrentColorFrame_Text.Parent = CurrentColorFrame
-                                CurrentColorFrame_Text.BackgroundColor3 = Color3.fromRGB(15,15,15)
-                                CurrentColorFrame_Text.BackgroundTransparency = 1.000
-                                CurrentColorFrame_Text.BorderSizePixel = 0
-                                CurrentColorFrame_Text.Size = UDim2.new(1, 0, 1, 0)
-                                CurrentColorFrame_Text.FontFace = Fonts.ProggyTiny
-                                CurrentColorFrame_Text.Text = args.text or args.flag
-                                CurrentColorFrame_Text.TextColor3 = library.Colors.libColor
-                                CurrentColorFrame_Text.TextSize = 9
-                                CurrentColorFrame_Text.TextStrokeTransparency = 0.000
- 
+
                                 main_2.Name = "main"
                                 main_2.Parent = pickerframe
                                 main_2.BackgroundColor3 = Color3.fromRGB(15,15,15)
@@ -1110,10 +1090,6 @@ repeat
                                     if typeof(value) == "table" then value = fakevalue end
                                     library.flags[args.flag] = value
                                     front.BackgroundColor3 = value
- 
-                                    local r, g, b = value.r * 255, value.g * 255, value.b * 255
-                                    CurrentColorFrame_Text.TextColor3 = value
-                                    CurrentColorFrame_Text.Text = "color3.fromRGB(" .. math.floor(r) .. ", " .. math.floor(g) .. ", " .. math.floor(b) .. ")"
  
                                     if args.callback then
                                     args.callback(value)
