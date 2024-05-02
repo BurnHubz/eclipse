@@ -999,7 +999,7 @@ repeat
  
                                 colorFrame.Name = "colorFrame"
                                 colorFrame.Parent = toggleframe
-                                colorFrame.BackgroundColor3 = Color3.fromRGB(15,15,15)
+                                colorFrame.BackgroundColor3 = Color3.fromRGB(11,11,11)
                                 colorFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
                                 colorFrame.BorderSizePixel = 2
                                 colorFrame.Position = UDim2.new(0.101092957, 0, 0.75, 0)
@@ -1007,13 +1007,13 @@ repeat
  
                                 colorFrame_2.Name = "colorFrame"
                                 colorFrame_2.Parent = colorFrame
-                                colorFrame_2.BackgroundColor3 = Color3.fromRGB(15,15,15)
+                                colorFrame_2.BackgroundColor3 = Color3.fromRGB(11,11,11)
                                 colorFrame_2.BorderColor3 = Color3.fromRGB(30, 30, 30)
                                 colorFrame_2.Size = UDim2.new(1, 0, 1, 0)
  
                                 hueframe.Name = "hueframe"
                                 hueframe.Parent = colorFrame_2
-                                hueframe.BackgroundColor3 = Color3.fromRGB(15,15,15)
+                                hueframe.BackgroundColor3 = Color3.fromRGB(11,11,11)
                                 hueframe.BorderColor3 = Color3.fromRGB(30, 30, 30)
                                 hueframe.BorderSizePixel = 2
                                 hueframe.Position = UDim2.new(-0.0830000022, 18, -0.0559999987, 13)
@@ -1021,14 +1021,14 @@ repeat
  
                                 main.Name = "main"
                                 main.Parent = hueframe
-                                main.BackgroundColor3 = Color3.fromRGB(15,15,15)
+                                main.BackgroundColor3 = Color3.fromRGB(11,11,11)
                                 main.BorderColor3 = Color3.fromRGB(0, 0, 0)
                                 main.Size = UDim2.new(1, 0, 1, 0)
                                 main.ZIndex = 6
  
                                 picker.Name = "picker"
                                 picker.Parent = main
-                                picker.BackgroundColor3 = Color3.fromRGB(232, 0, 255)
+                                picker.BackgroundColor3 = Color3.fromRGB(115, 100, 215)
                                 picker.BorderColor3 = Color3.fromRGB(0, 0, 0)
                                 picker.BorderSizePixel = 0
                                 picker.Size = UDim2.new(1, 0, 1, 0)
@@ -1113,7 +1113,7 @@ repeat
  
                                     local r, g, b = value.r * 255, value.g * 255, value.b * 255
                                     CurrentColorFrame_Text.TextColor3 = value
-                                    CurrentColorFrame_Text.Text = "RGB(" .. math.floor(r) .. ", " .. math.floor(g) .. ", " .. math.floor(b) .. ")"
+                                    CurrentColorFrame_Text.Text = "color3.fromRGB(" .. math.floor(r) .. ", " .. math.floor(g) .. ", " .. math.floor(b) .. ")"
  
                                     if args.callback then
                                     args.callback(value)
