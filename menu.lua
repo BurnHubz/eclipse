@@ -1037,15 +1037,15 @@ repeat
  
                                 pickerframe.Name = "pickerframe"
                                 pickerframe.Parent = colorFrame
-                                pickerframe.BackgroundColor3 = Color3.fromRGB(15,15,15)
+                                pickerframe.BackgroundColor3 = Color3.fromRGB(11,11,11)
                                 pickerframe.BorderColor3 = Color3.fromRGB(30, 30, 30)
-                                pickerframe.BorderSizePixel = 2
+                                pickerframe.BorderSizePixel = 1
                                 pickerframe.Position = UDim2.new(0.801000025, 14, -0.0559999987, 13)
                                 pickerframe.Size = UDim2.new(0, 20, 0.25, 110)
 
                                 main_2.Name = "main"
                                 main_2.Parent = pickerframe
-                                main_2.BackgroundColor3 = Color3.fromRGB(15,15,15)
+                                main_2.BackgroundColor3 = Color3.fromRGB(11,11,11)
                                 main_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
                                 main_2.Size = UDim2.new(0, 20, 1, 0)
                                 main_2.ZIndex = 6
@@ -1061,7 +1061,7 @@ repeat
  
                                 clr.Name = "clr"
                                 clr.Parent = colorFrame
-                                clr.BackgroundColor3 = Color3.fromRGB(15,15,15)
+                                clr.BackgroundColor3 = Color3.fromRGB(11,11,11)
                                 clr.BackgroundTransparency = 1.000
                                 clr.BorderColor3 = Color3.fromRGB(60, 60, 60)
                                 clr.BorderSizePixel = 2
