@@ -113,7 +113,7 @@ repeat
  Name.BorderColor3 = Color3.fromRGB(0, 0, 0)
  Name.BorderSizePixel = 0
  Name.Size = UDim2.new(0, 175, 0, 28)
- Name.FontFace = Fonts.ProggyTiny
+ Name.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
  Name.Text = "[<font color=\"rgb(115, 100, 215)\">Keybinds</font>]"
  Name.TextColor3 = Color3.fromRGB(255, 255, 255)
  Name.TextSize = 9
@@ -146,7 +146,7 @@ repeat
  Name_2.BorderSizePixel = 0
  Name_2.Position = UDim2.new(0.5, 0, -1.85000002, 0)
  Name_2.Size = UDim2.new(1, 0, 1, 0)
- Name_2.FontFace = Fonts.ProggyTiny
+ Name_2.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
  Name_2.Text = "Silent Aim: <font color=\"rgb(115, 100, 215)\">[MB1]</font>"
  Name_2.TextColor3 = Color3.fromRGB(125, 125, 125)
  Name_2.TextSize = 9
@@ -212,7 +212,7 @@ repeat
     WaterMarkLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
     WaterMarkLabel.BorderSizePixel = 0
     WaterMarkLabel.Position = UDim2.new(0, 0, 0, 0)
-    WaterMarkLabel.FontFace = Fonts.ProggyTiny
+    WaterMarkLabel.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
     WaterMarkLabel.RichText = true
     WaterMarkLabel.Text = "Build: Private"
     WaterMarkLabel.TextColor3 = Color3.fromRGB(152, 152, 152)
@@ -364,7 +364,7 @@ repeat
     menu_text_label.BackgroundTransparency = 1.000
     menu_text_label.Position = UDim2.new(0, 4, 0, -43)
     menu_text_label.Size = UDim2.new(0, 802, 0, 24)
-    menu_text_label.FontFace = Fonts.ProggyTiny
+    menu_text_label.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
     menu_text_label.Text = library.Title
     menu_text_label.TextColor3 = Color3.fromRGB(75, 75, 75)
     menu_text_label.TextSize = 9
@@ -388,7 +388,7 @@ repeat
     BuildLabel.BorderSizePixel = 0
     BuildLabel.Position = UDim2.new(0.0005, 1, 0, -10)
     BuildLabel.Size = UDim2.new(-0.00151476054, 200, 2.14484048, -1)
-    BuildLabel.FontFace = Fonts.ProggyTiny
+    BuildLabel.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
     BuildLabel.RichText = true
     BuildLabel.Text = "build: <font color=\"rgb(115, 100, 215)\">public</font>"
     BuildLabel.TextColor3 = Color3.fromRGB(74, 74, 74)
@@ -403,7 +403,7 @@ repeat
     ActiveUserLabel.BorderSizePixel = 0
     ActiveUserLabel.Position = UDim2.new(1.0055, -204, -1.46925938, 1)
     ActiveUserLabel.Size = UDim2.new(0.00125635799, 200, 4.04341888, -1)
-    ActiveUserLabel.FontFace = Fonts.ProggyTiny
+    ActiveUserLabel.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
     ActiveUserLabel.RichText = true
     ActiveUserLabel.Text = "active user: <font color=\"rgb(115, 100, 215)\">7d</font>"
     ActiveUserLabel.TextColor3 = Color3.fromRGB(74, 74, 74)
@@ -435,7 +435,7 @@ repeat
     end
     
     function library:CreateLabel(Properties, IsHud)
-        local _Instance = library:Create('TextLabel', {BackgroundTransparency = 1; FontFace = Fonts.ProggyTiny; TextColor3 = library.Colors.FontColor; TextSize = 9; TextStrokeTransparency = 0})
+        local _Instance = library:Create('TextLabel', {BackgroundTransparency = 1; FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular); TextColor3 = library.Colors.FontColor; TextSize = 9; TextStrokeTransparency = 0})
         library:AddToRegistry(_Instance, {TextColor3 = 'FontColor'}, IsHud)
         return library:Create(_Instance, Properties)
     end
@@ -643,7 +643,7 @@ repeat
                         title.BorderSizePixel = 0
                         title.Position = UDim2.new(0, 17, 0, 0)
                         title.ZIndex = 2
-                        title.FontFace = Fonts.ProggyTiny
+                        title.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                         title.Text = groupname or ""
                         title.TextColor3 = Color3.fromRGB(255, 255, 255)
                         title.TextSize = 9
@@ -708,7 +708,7 @@ repeat
                             text.BackgroundTransparency = 1.000
                             text.Position = UDim2.new(0, 22, 0, 0)
                             text.Size = UDim2.new(0, 0, 1, 2)
-                            text.FontFace = Fonts.ProggyTiny
+                            text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             text.Text = args.text or args.flag
                             text.TextColor3 = Color3.fromRGB(155, 155, 155)
                             text.TextSize = 9
@@ -721,7 +721,7 @@ repeat
                             button.BackgroundTransparency = 1.000
                             button.BorderSizePixel = 0
                             button.Size = UDim2.new(0, 101, 1, 0)
-                            button.FontFace = Fonts.ProggyTiny
+                            button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             button.Text = ""
                             button.TextColor3 = Color3.fromRGB(0, 0, 0)
                             button.TextSize = 9
@@ -785,7 +785,7 @@ repeat
                                 Name.BorderSizePixel = 1
                                 Name.Position = UDim2.new(0.5, 0, -1.85000002, 0)
                                 Name.Size = UDim2.new(1, 0, 1, 0)
-                                Name.FontFace = Fonts.ProggyTiny
+                                Name.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                                 Name.TextColor3 = Color3.fromRGB(125, 125, 125)
                                 Name.TextSize = 9
                                 Name.RichText = true
@@ -808,7 +808,7 @@ repeat
                                 button.BorderSizePixel = 1
                                 button.Position = UDim2.new(0.1, 0, 0, 2)
                                 button.Size = UDim2.new(0.9, 0, 1, 0)
-                                button.FontFace = Fonts.ProggyTiny
+                                button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                                 button.Text = ""
                                 button.TextColor3 = Color3.fromRGB(155, 155, 155)
                                 button.TextSize = 9
@@ -993,7 +993,7 @@ repeat
                                 button2.BackgroundTransparency = 1.000
                                 button2.Size = UDim2.new(1, 0, 1, 0)
                                 button2.Text = ""
-                                button2.FontFace = Fonts.ProggyTiny
+                                button2.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                                 button2.TextColor3 = Color3.fromRGB(0, 0, 0)
                                 button2.TextSize = 9
  
@@ -1198,7 +1198,7 @@ repeat
                             button.BackgroundTransparency = 1.000
                             button.BorderSizePixel = 0
                             button.Size = UDim2.new(1, 0, 1, 0)
-                            button.FontFace = Fonts.ProggyTiny
+                            button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             button.Text = args.text or args.flag
                             button.TextColor3 = Color3.fromRGB(255, 255, 255)
                             button.TextSize = 9
@@ -1281,7 +1281,7 @@ repeat
                             button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                             button.BackgroundTransparency = 1.000
                             button.Size = UDim2.new(0, 191, 1, 0)
-                            button.FontFace = Fonts.ProggyTiny
+                            button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             button.Text = ""
                             button.TextColor3 = Color3.fromRGB(0, 0, 0)
                             button.TextSize = 9
@@ -1290,7 +1290,7 @@ repeat
                             valuetext.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                             valuetext.BackgroundTransparency = 1.000
                             valuetext.Position = UDim2.new(0.5, 0, 0.5, 0)
-                            valuetext.FontFace = Fonts.ProggyTiny
+                            valuetext.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             valuetext.Text = "1/10"
                             valuetext.TextColor3 = Color3.fromRGB(255, 255, 255)
                             valuetext.TextSize = 9
@@ -1306,7 +1306,7 @@ repeat
                             text.BackgroundTransparency = 1.000
                             text.Position = UDim2.new(0.0299999993, -1, 0, 7)
                             text.ZIndex = 2
-                            text.FontFace = Fonts.ProggyTiny
+                            text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             text.Text = args.text or args.flag
                             text.TextColor3 = Color3.fromRGB(244, 244, 244)
                             text.TextSize = 9
@@ -1323,7 +1323,7 @@ repeat
                             textAdd.BackgroundTransparency = 1.000
                             textAdd.Position = UDim2.new(0.9111111111, -1, 0, 7)
                             textAdd.ZIndex = 2
-                            textAdd.FontFace = Fonts.ProggyTiny
+                            textAdd.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             textAdd.Text = "+"
                             textAdd.TextColor3 = Color3.fromRGB(125, 125, 125)
                             textAdd.TextSize = 9
@@ -1336,7 +1336,7 @@ repeat
                             textRemove.BackgroundTransparency = 1.000
                             textRemove.Position = UDim2.new(0.9599999999, -1, 0, 7)
                             textRemove.ZIndex = 2
-                            textRemove.FontFace = Fonts.ProggyTiny
+                            textRemove.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             textRemove.Text = "-"
                             textRemove.TextColor3 = Color3.fromRGB(125, 125, 125)
                             textRemove.TextSize = 9
@@ -1470,7 +1470,7 @@ repeat
                             box.BackgroundTransparency = 1.000
                             box.Selectable = false
                             box.Size = UDim2.new(1, 0, 1, 0)
-                            box.FontFace = Fonts.ProggyTiny
+                            box.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             box.Text = args.value or ""
                             box.TextColor3 = Color3.fromRGB(255, 255, 255)
                             box.TextSize = 9
@@ -1488,7 +1488,7 @@ repeat
                             text.BackgroundTransparency = 1.000
                             text.Position = UDim2.new(0.0299999993, -1, 0, 7)
                             text.ZIndex = 2
-                            text.FontFace = Fonts.ProggyTiny
+                            text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             text.Text = args.text or args.flag
                             text.TextColor3 = Color3.fromRGB(244, 244, 244)
                             text.TextSize = 9
@@ -1547,7 +1547,7 @@ repeat
                             Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                             Text.BackgroundTransparency = 1.000
                             Text.Position = UDim2.new(0.02, -1, 0, 10)
-                            Text.FontFace = Fonts.ProggyTiny
+                            Text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             Text.Text = args.text
                             Text.TextColor3 = Color3.fromRGB(244, 244, 244)
                             Text.TextSize = 9
@@ -1601,7 +1601,7 @@ repeat
                             button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                             button.BackgroundTransparency = 1.000
                             button.Size = UDim2.new(0, 191, 1, 0)
-                            button.FontFace = Fonts.ProggyTiny
+                            button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             button.Text = ""
                             button.TextColor3 = Color3.fromRGB(0, 0, 0)
                             button.TextSize = 9
@@ -1624,7 +1624,7 @@ repeat
                             valuetext.BackgroundTransparency = 1.000
                             valuetext.Position = UDim2.new(0.00200000009, 2, 0, 7)
                             valuetext.ZIndex = 2
-                            valuetext.FontFace = Fonts.ProggyTiny
+                            valuetext.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             valuetext.Text = ""
                             valuetext.TextColor3 = Color3.fromRGB(244, 244, 244)
                             valuetext.TextSize = 9
@@ -1642,7 +1642,7 @@ repeat
                             text.BackgroundTransparency = 1.000
                             text.Position = UDim2.new(0.0299999993, -1, 0, 7)
                             text.ZIndex = 2
-                            text.FontFace = Fonts.ProggyTiny
+                            text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             text.Text = args.text or args.flag
                             text.TextColor3 = Color3.fromRGB(244, 244, 244)
                             text.TextSize = 9
@@ -1749,7 +1749,7 @@ repeat
                                     button_2.BackgroundTransparency = 0.850
                                     button_2.BorderSizePixel = 0
                                     button_2.Size = UDim2.new(1, 0, 1, 0)
-                                    button_2.FontFace = Fonts.ProggyTiny
+                                    button_2.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                                     button_2.BorderColor3 = Color3.fromRGB(25,25,25)
                                     button_2.Text = ""
                                     button_2.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -1761,7 +1761,7 @@ repeat
                                     text_2.BackgroundTransparency = 1.000
                                     text_2.Position = UDim2.new(0, 4, 0, 0)
                                     text_2.Size = UDim2.new(0, 0, 1, 0)
-                                    text_2.FontFace = Fonts.ProggyTiny
+                                    text_2.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                                     text_2.Text = v
                                     text_2.TextColor3 = args.multiselect and Color3.fromRGB(125, 125, 125) or library.Colors.libColor
                                     text_2.TextSize = 9
@@ -1939,7 +1939,7 @@ repeat
                                     text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                                     text.BackgroundTransparency = 1.000
                                     text.Size = UDim2.new(1, 0, 0, 18)
-                                    text.FontFace = Fonts.ProggyTiny
+                                    text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                                     text.Text = v
                                     text.TextColor3 = Color3.fromRGB(255, 255, 255)
                                     text.TextSize = 9
@@ -2000,7 +2000,7 @@ repeat
                             text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                             text.BackgroundTransparency = 1.000
                             text.Position = UDim2.new(0.02, -1, 0, 10)
-                            text.FontFace = Fonts.ProggyTiny
+                            text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             text.Text = args.text or args.flag
                             text.TextColor3 = Color3.fromRGB(244, 244, 244)
                             text.TextSize = 9
@@ -2013,7 +2013,7 @@ repeat
                             button.BackgroundTransparency = 1.000
                             button.BorderSizePixel = 0
                             button.Size = UDim2.new(1, 0, 1, 0)
-                            button.FontFace = Fonts.ProggyTiny
+                            button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             button.Text = ""
                             button.TextColor3 = Color3.fromRGB(0, 0, 0)
                             button.TextSize = 9
@@ -2050,7 +2050,7 @@ repeat
                             button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                             button.BackgroundTransparency = 1.000
                             button.Size = UDim2.new(0, 202, 0, 22)
-                            button.FontFace = Fonts.ProggyTiny
+                            button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             button.Text = ""
                             button.ZIndex = args.ontop and topStuff or jigCount
                             button.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -2116,7 +2116,7 @@ repeat
                             CurrentColorFrame_Text.BackgroundTransparency = 1.000
                             CurrentColorFrame_Text.BorderSizePixel = 0
                             CurrentColorFrame_Text.Size = UDim2.new(1, 0, 1, 0)
-                            CurrentColorFrame_Text.FontFace = Fonts.ProggyTiny
+                            CurrentColorFrame_Text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             CurrentColorFrame_Text.Text = args.text or args.flag
                             CurrentColorFrame_Text.TextColor3 = library.Colors.libColor
                             CurrentColorFrame_Text.TextSize = 9
@@ -2260,7 +2260,7 @@ repeat
                             text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                             text.BackgroundTransparency = 1.000
                             text.Position = UDim2.new(0.02, -1, 0, 10)
-                            text.FontFace = Fonts.ProggyTiny
+                            text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             text.Text = args.text or args.flag
                             text.TextColor3 = Color3.fromRGB(244, 244, 244)
                             text.TextSize = 9
@@ -2273,7 +2273,7 @@ repeat
                             button.BorderSizePixel = 0
                             button.Position = UDim2.new(7.09711117e-08, 0, 0, 0)
                             button.Size = UDim2.new(0.02, 0, 1, 0)
-                            button.FontFace = Fonts.ProggyTiny
+                            button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             button.Text = "--"
                             button.TextColor3 = Color3.fromRGB(155, 155, 155)
                             button.TextSize = 9
