@@ -116,7 +116,7 @@ repeat
  Name.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
  Name.Text = "[<font color=\"rgb(115, 100, 215)\">Keybinds</font>]"
  Name.TextColor3 = Color3.fromRGB(255, 255, 255)
- Name.TextSize = 9
+ Name.TextSize = 10
  Name.RichText = true
  Name.BorderSizePixel = 1
  
@@ -149,7 +149,7 @@ repeat
  Name_2.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
  Name_2.Text = "Silent Aim: <font color=\"rgb(115, 100, 215)\">[MB1]</font>"
  Name_2.TextColor3 = Color3.fromRGB(125, 125, 125)
- Name_2.TextSize = 9
+ Name_2.TextSize = 10
  Name_2.BorderSizePixel = 1
  Name_2.RichText = true
  Name_2.Visible = false
@@ -216,7 +216,7 @@ repeat
     WaterMarkLabel.RichText = true
     WaterMarkLabel.Text = "Build: Private"
     WaterMarkLabel.TextColor3 = Color3.fromRGB(152, 152, 152)
-    WaterMarkLabel.TextSize = 9
+    WaterMarkLabel.TextSize = 10
     WaterMarkLabel.TextWrapped = false
     
     WaterMarkLabel:GetPropertyChangedSignal("TextBounds"):Connect(function()
@@ -367,7 +367,7 @@ repeat
     menu_text_label.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
     menu_text_label.Text = library.Title
     menu_text_label.TextColor3 = Color3.fromRGB(75, 75, 75)
-    menu_text_label.TextSize = 9
+    menu_text_label.TextSize = 10
     menu_text_label.TextStrokeTransparency = 0.000
  
     local BottomBar = Instance.new("Frame", menu.bg)
@@ -392,7 +392,7 @@ repeat
     BuildLabel.RichText = true
     BuildLabel.Text = "build: <font color=\"rgb(115, 100, 215)\">public</font>"
     BuildLabel.TextColor3 = Color3.fromRGB(74, 74, 74)
-    BuildLabel.TextSize = 9
+    BuildLabel.TextSize = 10
     BuildLabel.TextWrapped = true
     BuildLabel.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -407,7 +407,7 @@ repeat
     ActiveUserLabel.RichText = true
     ActiveUserLabel.Text = "active user: <font color=\"rgb(115, 100, 215)\">7d</font>"
     ActiveUserLabel.TextColor3 = Color3.fromRGB(74, 74, 74)
-    ActiveUserLabel.TextSize = 9
+    ActiveUserLabel.TextSize = 10
     ActiveUserLabel.TextXAlignment = Enum.TextXAlignment.Right
  
     for _, obj in pairs(menu:GetDescendants()) do
@@ -435,7 +435,7 @@ repeat
     end
     
     function library:CreateLabel(Properties, IsHud)
-        local _Instance = library:Create('TextLabel', {BackgroundTransparency = 1; FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular); TextColor3 = library.Colors.FontColor; TextSize = 9; TextStrokeTransparency = 0})
+        local _Instance = library:Create('TextLabel', {BackgroundTransparency = 1; FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular); TextColor3 = library.Colors.FontColor; TextSize = 10; TextStrokeTransparency = 0})
         library:AddToRegistry(_Instance, {TextColor3 = 'FontColor'}, IsHud)
         return library:Create(_Instance, Properties)
     end
@@ -468,7 +468,7 @@ repeat
             local Gradient = library:Create('UIGradient', {Color = ColorSequence.new({ColorSequenceKeypoint.new(0, library.Colors.MainColor), ColorSequenceKeypoint.new(1, library.Colors.MainColor)}); Rotation = -90; Parent = InnerFrame})
             library:AddToRegistry(NotifyInner, {BackgroundColor3 = 'MainColor'; BorderColor3 = 'OutlineColor';}, true)
             library:AddToRegistry(Gradient, {Color = function() return ColorSequence.new({ColorSequenceKeypoint.new(0, library.Colors.MainColor), ColorSequenceKeypoint.new(1, library.Colors.MainColor)}); end})
-            library:CreateLabel({Position = UDim2.new(0, 6, 0, 0); Size = UDim2.new(1, -4, 1, 0); Text = Text; TextXAlignment = Enum.TextXAlignment.Left; TextSize = 9; ZIndex = 103; Parent = InnerFrame})
+            library:CreateLabel({Position = UDim2.new(0, 6, 0, 0); Size = UDim2.new(1, -4, 1, 0); Text = Text; TextXAlignment = Enum.TextXAlignment.Left; TextSize = 10; ZIndex = 103; Parent = InnerFrame})
             pcall(NotifyOuter.TweenSize, NotifyOuter, UDim2.new(0, XSize + 42 + 4, 0, YSize), 'Out', 'Quad', 0.6, true)
             pcall(LeftColor.TweenSize, LeftColor, UDim2.new(0, 2, 0, 0), 'Out', 'Linear', 1, true)
             wait(0.9)
@@ -646,7 +646,7 @@ repeat
                         title.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                         title.Text = groupname or ""
                         title.TextColor3 = Color3.fromRGB(255, 255, 255)
-                        title.TextSize = 9
+                        title.TextSize = 10
                         title.TextStrokeTransparency = 0.000
                         title.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -711,7 +711,7 @@ repeat
                             text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             text.Text = args.text or args.flag
                             text.TextColor3 = Color3.fromRGB(155, 155, 155)
-                            text.TextSize = 9
+                            text.TextSize = 10
                             text.TextStrokeTransparency = 0.000
                             text.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -724,7 +724,7 @@ repeat
                             button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             button.Text = ""
                             button.TextColor3 = Color3.fromRGB(0, 0, 0)
-                            button.TextSize = 9
+                            button.TextSize = 10
  
                             local state = args.default
                             if args.risky then text.TextColor3 = state and Color3.fromRGB(255, 0, 0) or Color3.fromRGB(139, 0, 0) end
@@ -787,7 +787,7 @@ repeat
                                 Name.Size = UDim2.new(1, 0, 1, 0)
                                 Name.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                                 Name.TextColor3 = Color3.fromRGB(125, 125, 125)
-                                Name.TextSize = 9
+                                Name.TextSize = 10
                                 Name.RichText = true
                                 Name.Visible = false
  
@@ -811,7 +811,7 @@ repeat
                                 button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                                 button.Text = ""
                                 button.TextColor3 = Color3.fromRGB(155, 155, 155)
-                                button.TextSize = 9
+                                button.TextSize = 10
                                 button.TextStrokeTransparency = 0.000
                                 button.TextXAlignment = Enum.TextXAlignment.Center
  
@@ -995,7 +995,7 @@ repeat
                                 button2.Text = ""
                                 button2.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                                 button2.TextColor3 = Color3.fromRGB(0, 0, 0)
-                                button2.TextSize = 9
+                                button2.TextSize = 10
  
                                 colorFrame.Name = "colorFrame"
                                 colorFrame.Parent = toggleframe
@@ -1201,7 +1201,7 @@ repeat
                             button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             button.Text = args.text or args.flag
                             button.TextColor3 = Color3.fromRGB(255, 255, 255)
-                            button.TextSize = 9
+                            button.TextSize = 10
                             button.TextStrokeTransparency = 0.000
  
                             gradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(59, 59, 59)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(83, 83, 83))}
@@ -1284,7 +1284,7 @@ repeat
                             button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             button.Text = ""
                             button.TextColor3 = Color3.fromRGB(0, 0, 0)
-                            button.TextSize = 9
+                            button.TextSize = 10
  
                             valuetext.Parent = main
                             valuetext.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -1293,7 +1293,7 @@ repeat
                             valuetext.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             valuetext.Text = "1/10"
                             valuetext.TextColor3 = Color3.fromRGB(255, 255, 255)
-                            valuetext.TextSize = 9
+                            valuetext.TextSize = 10
                             valuetext.TextStrokeTransparency = 0.000
  
                             UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(105, 105, 105)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(121, 121, 121))}
@@ -1309,7 +1309,7 @@ repeat
                             text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             text.Text = args.text or args.flag
                             text.TextColor3 = Color3.fromRGB(244, 244, 244)
-                            text.TextSize = 9
+                            text.TextSize = 10
                             text.TextStrokeTransparency = 0.000
                             text.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -1326,7 +1326,7 @@ repeat
                             textAdd.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             textAdd.Text = "+"
                             textAdd.TextColor3 = Color3.fromRGB(125, 125, 125)
-                            textAdd.TextSize = 9
+                            textAdd.TextSize = 10
                             textAdd.TextStrokeTransparency = 0.000
                             textAdd.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -1339,7 +1339,7 @@ repeat
                             textRemove.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             textRemove.Text = "-"
                             textRemove.TextColor3 = Color3.fromRGB(125, 125, 125)
-                            textRemove.TextSize = 9
+                            textRemove.TextSize = 10
                             textRemove.TextStrokeTransparency = 0.000
                             textRemove.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -1473,7 +1473,7 @@ repeat
                             box.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             box.Text = args.value or ""
                             box.TextColor3 = Color3.fromRGB(255, 255, 255)
-                            box.TextSize = 9
+                            box.TextSize = 10
                             box.TextStrokeTransparency = 0.000
                             box.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -1491,7 +1491,7 @@ repeat
                             text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             text.Text = args.text or args.flag
                             text.TextColor3 = Color3.fromRGB(244, 244, 244)
-                            text.TextSize = 9
+                            text.TextSize = 10
                             text.TextStrokeTransparency = 0.000
                             text.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -1550,7 +1550,7 @@ repeat
                             Text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             Text.Text = args.text
                             Text.TextColor3 = Color3.fromRGB(244, 244, 244)
-                            Text.TextSize = 9
+                            Text.TextSize = 10
                             Text.TextStrokeTransparency = 0.000
                             Text.TextXAlignment = Enum.TextXAlignment.Left
                         end
@@ -1604,7 +1604,7 @@ repeat
                             button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             button.Text = ""
                             button.TextColor3 = Color3.fromRGB(0, 0, 0)
-                            button.TextSize = 9
+                            button.TextSize = 10
  
                             dumbtriangle.Name = "dumbtriangle"
                             dumbtriangle.Parent = main
@@ -1627,7 +1627,7 @@ repeat
                             valuetext.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             valuetext.Text = ""
                             valuetext.TextColor3 = Color3.fromRGB(244, 244, 244)
-                            valuetext.TextSize = 9
+                            valuetext.TextSize = 10
                             valuetext.TextStrokeTransparency = 0.000
                             valuetext.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -1645,7 +1645,7 @@ repeat
                             text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             text.Text = args.text or args.flag
                             text.TextColor3 = Color3.fromRGB(244, 244, 244)
-                            text.TextSize = 9
+                            text.TextSize = 10
                             text.TextStrokeTransparency = 0.000
                             text.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -1753,7 +1753,7 @@ repeat
                                     button_2.BorderColor3 = Color3.fromRGB(25,25,25)
                                     button_2.Text = ""
                                     button_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-                                    button_2.TextSize = 9
+                                    button_2.TextSize = 10
  
                                     text_2.Name = "off"
                                     text_2.Parent = option
@@ -1764,7 +1764,7 @@ repeat
                                     text_2.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                                     text_2.Text = v
                                     text_2.TextColor3 = args.multiselect and Color3.fromRGB(125, 125, 125) or library.Colors.libColor
-                                    text_2.TextSize = 9
+                                    text_2.TextSize = 10
                                     text_2.TextStrokeTransparency = 0.000
                                     text_2.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -1942,7 +1942,7 @@ repeat
                                     text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                                     text.Text = v
                                     text.TextColor3 = Color3.fromRGB(255, 255, 255)
-                                    text.TextSize = 9
+                                    text.TextSize = 10
                                     text.TextStrokeTransparency = 0.000
  
                                     button.MouseButton1Click:Connect(function()
@@ -2003,7 +2003,7 @@ repeat
                             text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             text.Text = args.text or args.flag
                             text.TextColor3 = Color3.fromRGB(244, 244, 244)
-                            text.TextSize = 9
+                            text.TextSize = 10
                             text.TextStrokeTransparency = 0.000
                             text.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -2016,7 +2016,7 @@ repeat
                             button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             button.Text = ""
                             button.TextColor3 = Color3.fromRGB(0, 0, 0)
-                            button.TextSize = 9
+                            button.TextSize = 10
  
                             colorpicker_2.Name = "colorpicker"
                             colorpicker_2.Parent = colorpicker
@@ -2054,7 +2054,7 @@ repeat
                             button.Text = ""
                             button.ZIndex = args.ontop and topStuff or jigCount
                             button.TextColor3 = Color3.fromRGB(0, 0, 0)
-                            button.TextSize = 9
+                            button.TextSize = 10
  
                             colorFrame.Name = "colorFrame"
                             colorFrame.Parent = colorpicker
@@ -2119,7 +2119,7 @@ repeat
                             CurrentColorFrame_Text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             CurrentColorFrame_Text.Text = args.text or args.flag
                             CurrentColorFrame_Text.TextColor3 = library.Colors.libColor
-                            CurrentColorFrame_Text.TextSize = 9
+                            CurrentColorFrame_Text.TextSize = 10
                             CurrentColorFrame_Text.TextStrokeTransparency = 0.000
  
                             main_2.Name = "main"
@@ -2263,7 +2263,7 @@ repeat
                             text.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             text.Text = args.text or args.flag
                             text.TextColor3 = Color3.fromRGB(244, 244, 244)
-                            text.TextSize = 9
+                            text.TextSize = 10
                             text.TextStrokeTransparency = 0.000
                             text.TextXAlignment = Enum.TextXAlignment.Left
  
@@ -2276,7 +2276,7 @@ repeat
                             button.FontFace = Font.fromId(12187362578, Enum.FontWeight.Regular)
                             button.Text = "--"
                             button.TextColor3 = Color3.fromRGB(155, 155, 155)
-                            button.TextSize = 9
+                            button.TextSize = 10
                             button.TextStrokeTransparency = 0.000
                             button.TextXAlignment = Enum.TextXAlignment.Right
  
