@@ -41,3 +41,4 @@ local Funny = {
     "🤡YOU MUST BE 🤪JOKING WITH THOSE 🤣MOVES!",
     "😜SORRY, 🤪I DIDN'T REALIZE 😆WE WERE PLAYING 🤣WITH TRAINING WHEELS!",
 };
+return Funny
